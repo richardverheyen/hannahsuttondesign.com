@@ -43,7 +43,28 @@ $(document).ready(function() {
 
   });
 
+  //open side menu on header click
   $('#menu-link').on('click', function() {
+    if (showingMenu) {
+      $('body').removeClass('menu-active');
+      $('#menu-link a').html('<a href="#">menu</a>');
+      showingMenu = false;
+      logoToggle();
+      event.preventDefault();
+
+    } else {
+      $('body').addClass('menu-active');
+      $('#menu-link a').html('<a href="#">close</a>');
+      showingMenu = true;
+      logoToggle();
+      event.preventDefault();
+
+    };
+    return showingMenu;
+  });
+
+  // short term, open side menu on 'contact' click
+  $('.contact-button').on('click', function() {
     if (showingMenu) {
       $('body').removeClass('menu-active');
       $('#menu-link a').html('<a href="#">menu</a>');
