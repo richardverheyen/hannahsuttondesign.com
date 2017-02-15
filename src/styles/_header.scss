@@ -55,15 +55,16 @@ header {
           transition: all ease-out 800ms;
         }
         img {
-          height: 50px;
+          height: 52px;
           z-index: 3;
         }
         #logo-left {
+          width: 125px;
           padding-right: 8px;
-
         }
         #logo-right {
-          padding-left: 10px;
+          width: 125px;
+          padding-left: 8px;
         }
         > div {
           display: none;
