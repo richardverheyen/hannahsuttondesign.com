@@ -5,6 +5,7 @@ $(document).ready(function() {
 
   logoAnimation();
 
+  //Animation effects for landing page feature projects section
   $(window).scroll(function() {
     var viewFromTop = $(window).scrollTop();
     var viewHeight = $(window).height();

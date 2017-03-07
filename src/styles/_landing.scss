@@ -266,10 +266,13 @@
         > div {
           .images {
             left: 60%;
+            @media (max-width: 500px) {
+              margin-bottom: 0;
+            }
             div {
               position: relative;
-              width: 45vw;
-              height: 45vw;
+              width: 35vw;
+              height: 35vw;
               margin: auto 0;
               max-height: 400px;
               min-width: 205px;
@@ -280,21 +283,21 @@
                 opacity: 0;
                 transition: all ease-out 1200ms;
                 &:nth-child(1) {
-                  width: 45vw;
+                  width: 35vw;
                   max-width: 400px;
                   bottom: 0;
                   right: 0;
                   min-width: 225px;
                 }
                 &:nth-last-child(2) {
-                  width: 20vw;
+                  width: 15.6vw;
                   max-width: 160px;
                   right: -10px;
                   bottom: -9px;
                   min-width: 100px;
                 }
                 &:nth-last-child(1) {
-                  width: 10vw;
+                  width: 7.8vw;
                   max-width: 80px;
                   right: -30px;
                   bottom: -13px;
@@ -313,11 +316,11 @@
         background: url('/assets/img/landing/karen-williams/background.jpg');
         > div {
           > img {
-            @media (max-width: 600px) {
+            @media (max-width: 720px) {
               transform: rotate(90deg);
             }
           }
-          > ul {
+          > #sliding-cards {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -327,7 +330,7 @@
               justify-content: center;
               transform: rotate(-30deg);
               margin: 35px 0;
-              @media (min-width: 600px) {
+              @media (min-width: 720px) {
                 //removes the last line of cards to centre the feature card on desktop
                 &:nth-last-child(1) {
                   display: none;
@@ -336,13 +339,13 @@
                   display: none;
                 }
               }
-              @media (max-width: 600px) {
+              @media (max-width: 720px) {
                 margin: 25px 0;
                 //removes the last card in each line to centre the feature card for mobile
                 img:nth-last-child(1) {
                   display: none;
                 }
-                &:nth-child(3) {
+                &:nth-child(4) {
                   //selects the line which has the feature card on it
                   img {
                     &:nth-last-child(2) {
@@ -365,7 +368,7 @@
                 .feature-card-mobile {
                   display: none;
                 }
-                @media (max-width: 600px) {
+                @media (max-width: 720px) {
                   width: 300px;
                   height: 160px;
                   margin: 3px;
@@ -385,7 +388,7 @@
           }
           .aside {
             left: 80%;
-            @media (max-width: 600px) {
+            @media (max-width: 720px) {
               left: 50%;
             }
           }
@@ -403,14 +406,14 @@
           display: flex;
           position: relative;
           z-index: 1;
-          height: 120vh;
-          @media (max-width: 600px) {
+          height: 120vw;
+          min-height: 750px;
+          max-height: 1200px;
+          @media (max-width: 720px) {
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column-reverse;
-            height: 160vh;
-
           }
 
           .aside {
@@ -423,12 +426,12 @@
             align-items: center;
             z-index: 4;
             height: 100%;
-            @media (max-width: 600px) {
+            @media (max-width: 720px) {
               position: static;
               transform: translateX(0);
               height: auto;
             }
-            @media (min-width: 600px) {
+            @media (min-width: 720px) {
               &:hover {
                 .flipper {
                   @keyframes flip {
@@ -447,19 +450,42 @@
               font-size: 28px;
               color: white;
               min-width: 220px;
+              @media (max-width: 800px) {
+                line-height: 135%;
+              }
+              @media (max-width: 450px) {
+                font-size: 6vw;
+                line-height: 130%;
+              }
+              @media (max-width: 400px) {
+                font-size: 24px;
+              }
             }
             img {
-              height: 70px;
-              margin: 10px;
-              &:nth-child(1) {
+              &.line-dot {
+                height: 60px;
+                margin: 10px;
+                @media (max-width: 720px) {
+                  height: 40px;
+                }
+              }
+              &.line-down {
                 height: 100px;
                 width: 2px;
                 margin-bottom: 12px;
+                @media (max-width: 720px) {
+                  height: 70px;
+                  width: 1px;
+                }
               }
             }
             .flipper {
               position: relative;
-              height: 50px;
+              height: 45px;
+              margin-top: 10px;
+              @media (max-width: 720px) {
+                height: 40px;
+              }
               &:after {
                 position: absolute;
                 content: ('');
@@ -478,6 +504,10 @@
                 line-height: 160%;
                 margin: 0 auto;
                 color: $gold-leaf;
+                @media (max-width: 600px) {
+                  font-size: 18px;
+                  line-height: 135%;
+                }
               }
             }
             a {
@@ -497,15 +527,18 @@
             left: 70%;
             transform: translateX(-50%);
             z-index: 3;
-            @media (max-width: 600px) {
+            @media (max-width: 720px) {
               position: static;
               transform: translateX(0);
               margin-bottom: 40px;
               height: 200px;
             }
+            @media (max-width: 400px) {
+              margin-bottom: 0;
+            }
             img {
               margin: auto 0;
-              @media (max-width: 600px) {
+              @media (max-width: 720px) {
                 min-width: 300px;
               }
             }
@@ -540,10 +573,11 @@
         line-height: 120%;
         letter-spacing: 2px;
         @media (max-width: 550px) {
-          font-size: 9vw;
+          font-size: 7vw;
         }
         @media (max-width: 400px) {
           font-size: 32px;
+          max-width: 270px;
         }
       }
       p {
