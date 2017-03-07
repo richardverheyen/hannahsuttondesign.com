@@ -168,6 +168,25 @@ body.menu-active {
         width: 20vw;
         height: 20vw;
         margin-top: 0;
+        @media (max-width: 900px) {
+          width: 25vw;
+          height: 25vw;
+          &:nth-last-child(1),
+          &:nth-last-child(2) {
+            display: none;
+          }
+        }
+        @media (max-width: 767px) {
+          width: 33.33vw;
+          height: 33.33vw;
+          &:nth-last-child(1) {
+            display: none;
+          }
+        }
+        @media (max-width: 500px) {
+          width: 50vw;
+          height: 50vw;
+        }
 
         img {
           height: 100%;
