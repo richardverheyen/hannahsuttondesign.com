@@ -15,24 +15,20 @@ $(document).ready(function() {
     if (introGoodLooking < elementActivationPoint) {
       $('#intro h2 > span').addClass('active');
     };
-
     var cosmeticAvenueImage = $('#ca-image').offset().top;
     if (cosmeticAvenueImage < elementActivationPoint) {
       $('#ca-image').addClass('active');
     };
-
     var jeepImage = $('#jeep-image').offset().top;
     if (jeepImage < elementActivationPoint) {
       $('#jeep-image').addClass('active');
     };
-
-    var finsecImages = $('#finsec .images').offset().top;
-    if (finsecImages + 250 < elementActivationPoint) {
+    var finsecImages = $('#finsec .images img').offset().top;
+    if (finsecImages < elementActivationPoint) {
       $('#finsec .images img:nth-last-child(3)').addClass('active');
       $('#finsec .images img:nth-last-child(2)').addClass('active');
       $('#finsec .images img:nth-last-child(1)').addClass('active');
     };
-
     var karenWilliamsCard = $('#sliding-cards .feature-card').offset().top;
     if (karenWilliamsCard < elementActivationPoint) {
       $('#sliding-cards .feature-card').addClass('active');
@@ -105,11 +101,6 @@ $(document).ready(function() {
     setTimeout(function() {
       $('#logo a').removeClass('animate');
     }, 1500);
-
-  };
-
-  //Animate the Karen Williams cards upwards as they are scrolled on to
-  function karenWilliamsCard() {
 
   };
 
