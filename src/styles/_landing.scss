@@ -231,13 +231,18 @@
     }
     > ul {
       #cosmetic-avenue {
-        background: url('/assets/img/landing/cosmetic-avenue/background.jpg');
-        .images {
-          img {
-            width: 45vw;
-            min-height: 90px;
-            @media (max-width: 600px) {
-              height: 13.8vw;
+        > div {
+          > img {
+            position: fixed;
+            background: url('/assets/img/landing/cosmetic-avenue/background.jpg');
+          }
+          .images {
+            img {
+              width: 45vw;
+              min-height: 90px;
+              @media (max-width: 600px) {
+                height: 13.8vw;
+              }
             }
           }
         }
@@ -265,7 +270,7 @@
         background: url('/assets/img/landing/finsec/background.jpg');
         > div {
           .images {
-            left: 60%;
+            left: 66%;
             @media (max-width: 720px) {
               margin-bottom: 70px;
             }

@@ -40,6 +40,19 @@ $(document).ready(function() {
 
   });
 
+  $(window).scroll(function() {
+    var viewFromTop = $(window).scrollTop();
+    var viewHeight = $(window).height();
+    var elementHeight = $('#cosmetic-avenue').height();
+    var fadeActivationPoint = viewFromTop + (viewHeight * 4 / 5);
+    var cosmeticAvenueImage2 = $('#cosmetic-avenue').offset().top;
+
+    // $opacity = ((viewFromTop + viewHeight) - cosmeticAvenueImage2) * -1 / (elementHeight);
+    console.log(viewFromTop + (viewHeight * 4 / 5));
+    console.log(cosmeticAvenueImage2);
+    // $('body').css('opacity', $opacity);
+  });
+
   //open side menu on header click
   $('#menu-link').on('click', function() {
     if (showingMenu) {
