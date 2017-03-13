@@ -189,6 +189,7 @@
       text-align: center;
       position: relative;
       margin: 100px 0;
+      overflow: visible;
       @media (max-width: 600px) {
         margin: 30px 0;
       }
@@ -233,7 +234,9 @@
       #cosmetic-avenue {
         > div {
           > img {
-            position: fixed;
+            //background images with parallax effect
+            position: absolute;
+            top: 0;
             background: url('/assets/img/landing/cosmetic-avenue/background.jpg');
           }
           .images {
@@ -326,6 +329,7 @@
       #karen-williams {
         background: url('/assets/img/landing/karen-williams/background.jpg');
         > div {
+          overflow: hidden;
           > img {
             @media (max-width: 720px) {
               transform: rotate(90deg) translate(-50%, 50%);
@@ -415,7 +419,6 @@
 
       > li {
         position: relative;
-        overflow: hidden;
         > div {
           display: flex;
           position: relative;
@@ -560,12 +563,9 @@
         }
         .background {
           position: absolute;
-          height: 120%;
-          min-width: 100vw;
+          height: 200%;
+          width: 100vw;
           z-index: 1;
-          top: 50%;
-          left: 50vw;
-          transform: translate(-50%,-50%);
           &:nth-last-child(1) {
             z-index: 2;
           }
@@ -698,12 +698,21 @@
     }
   }
 
-  .animateFadeUp {
-    transform: translateY(30px);
+  .animateFadeInRight {
     opacity: 0;
     transition: all ease-out 800ms;
+    transform: translateX(30px);
     &.active {
-      transform: translateY(0);
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  .animateFadeInLeft {
+    opacity: 0;
+    transition: all ease-out 800ms;
+    transform: translateX(-30px);
+    &.active {
+      transform: translateX(0);
       opacity: 1;
     }
   }
