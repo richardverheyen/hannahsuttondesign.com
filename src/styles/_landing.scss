@@ -56,27 +56,27 @@
             bottom: -80px;
             transform: translateX(-50%);
             left: 50%;
-            @keyframes flippause {
-              0% {
-                transform: scaleX(1);
-              }
-              10% {
-                transform: scalex(-1);
-              }
-              20% {
-                transform: scaleX(1);
-              }
-              30% {
-                transform: scalex(-1);
-              }
-              40% {
-                transform: scalex(1);
-              }
-              100% {
-                transform: scaleX(1);
-              }
-            }
-            animation: flippause 10s ease-in-out infinite;
+            // @keyframes flippause {
+            //   0% {
+            //     transform: scaleX(1) translateX(-50%);
+            //   }
+            //   10% {
+            //     transform: scalex(-1) translateX(-50%);
+            //   }
+            //   20% {
+            //     transform: scaleX(1) translateX(-50%);
+            //   }
+            //   30% {
+            //     transform: scalex(-1) translateX(-50%);
+            //   }
+            //   40% {
+            //     transform: scalex(1) translateX(-50%);
+            //   }
+            //   100% {
+            //     transform: scaleX(1) translateX(-50%);
+            //   }
+            // }
+            // animation: flippause 10s ease-in-out infinite;
           }
         }
       }
@@ -233,6 +233,7 @@
     > ul {
       #cosmetic-avenue {
         > div {
+          z-index: 0;
           > img {
             //background images with parallax effect
             position: absolute;
@@ -272,6 +273,9 @@
       #finsec {
         background: url('/assets/img/landing/finsec/background.jpg');
         > div {
+          .background {
+            height: 100%;
+          }
           .images {
             left: 66%;
             @media (max-width: 720px) {
@@ -330,9 +334,11 @@
         background: url('/assets/img/landing/karen-williams/background.jpg');
         > div {
           overflow: hidden;
-          > img {
+          > .background {
             @media (max-width: 720px) {
-              transform: rotate(90deg) translate(-50%, 50%);
+              transform: rotate(90deg);
+              height: 100vw;
+              width: 250%;
             }
           }
           > #sliding-cards {
@@ -563,7 +569,7 @@
         }
         .background {
           position: absolute;
-          height: 200%;
+          height: 250%;
           width: 100vw;
           z-index: 1;
           &:nth-last-child(1) {
