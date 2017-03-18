@@ -339,11 +339,17 @@
         > div {
           overflow: hidden;
           > .background {
+            transform-origin: 100% 50%;
+            height: 250%;
+            width: 100vw;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             @media (max-width: 720px) {
-              transform: rotate(90deg);
-              transform-origin: 50%;
-              height: 100vw;
-              width: 250%;
+              transform: translate(-50%, -50%) rotate(90deg);
+              top: 100%;
+              left: 50%;
+              width: 150%;
             }
           }
           > #sliding-cards {
