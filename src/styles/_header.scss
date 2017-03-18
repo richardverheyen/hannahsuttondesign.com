@@ -14,9 +14,12 @@ header {
     height: 100%;
     > div {
       position: absolute;
+
     }
     #menu-link {
       left: 0;
+      top: 50%;
+      transform: translateY(-50%);
       margin-left: 20px;
       z-index: 3;
       transition: all 200ms fade-in-out;
@@ -41,7 +44,8 @@ header {
     }
     #logo {
       left: 50%;
-      transform: translateX(-50%);
+      top: 50%;
+      transform: translate(-50%, -50%);
       a {
         display: flex;
         position: relative;
@@ -119,6 +123,8 @@ header {
     #social-media {
       display: flex;
       right: 0;
+      top: 50%;
+      transform: translateY(-50%);
       margin-right: 20px;
       a {
         margin: 5px;
@@ -133,6 +139,9 @@ header {
             padding: 6px;
             width: 18px;
             height: 18px;
+          }
+          @media (max-width: 500px) {
+            padding: 4px;
           }
         }
       }

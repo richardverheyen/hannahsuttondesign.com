@@ -142,11 +142,12 @@ body.menu-active {
       font-size: 14px;
       font-weight: bold;
       letter-spacing: 2px;
+      padding-right: 40px;
       &:after {
         content: '';
         position: absolute;
         top: 50%;
-        right: -50px;
+        right: -10px;
         background: url('/assets/img/landing/small-arrow-right.svg');
         background-repeat: no-repeat;
         width: 40px;
@@ -168,6 +169,25 @@ body.menu-active {
         width: 20vw;
         height: 20vw;
         margin-top: 0;
+        @media (max-width: 900px) {
+          width: 25vw;
+          height: 25vw;
+          &:nth-last-child(1),
+          &:nth-last-child(2) {
+            display: none;
+          }
+        }
+        @media (max-width: 767px) {
+          width: 33.33vw;
+          height: 33.33vw;
+          &:nth-last-child(1) {
+            display: none;
+          }
+        }
+        @media (max-width: 500px) {
+          width: 50vw;
+          height: 50vw;
+        }
 
         img {
           height: 100%;
