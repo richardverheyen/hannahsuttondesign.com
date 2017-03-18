@@ -351,6 +351,9 @@
               left: 50%;
               width: 150%;
             }
+            @media (max-width: 550px) {
+              width: 240%;
+            }
           }
           > #sliding-cards {
             position: absolute;
