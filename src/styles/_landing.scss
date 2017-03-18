@@ -337,6 +337,7 @@
           > .background {
             @media (max-width: 720px) {
               transform: rotate(90deg);
+              transform-origin: 50%;
               height: 100vw;
               width: 250%;
             }
@@ -626,6 +627,9 @@
       background: url('/assets/img/landing/background-chair-overlay.png');
       background-size: cover;
       z-index: 1;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
     }
     > div {
       display: flex;
