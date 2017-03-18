@@ -207,6 +207,7 @@
         right: 100px;
         top: 50%;
         transform: translateY(-50%);
+        z-index: 5;
         @media (max-width: 850px) {
           position: static;
           right: 0;
@@ -235,11 +236,14 @@
         z-index: 1;
         > div {
           z-index: 0;
-          > img {
+          > .background {
             //background images with parallax effect
             position: absolute;
             top: 0;
-            background: url('/assets/img/landing/cosmetic-avenue/background.jpg');
+            background: url('/assets/img/landing/cosmetic-avenue/background-texture.png');
+            background-color: #142c45;
+            background-repeat: no-repeat;
+            background-size: cover;
           }
           .images {
             img {
@@ -255,6 +259,14 @@
       #jeep {
         z-index: 2;
         div {
+          > .background {
+            //background images with parallax effect
+            position: absolute;
+            top: 0;
+            background: url('/assets/img/landing/jeep/background-texture.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+          }
           .aside {
             left: 80%;
             @media (max-width: 600px) {
@@ -642,7 +654,7 @@
       background-size: cover;
       z-index: 1;
       transform: translate(-50%, -50%);
-      top: 50%;
+      top: 49%;
       left: 50%;
     }
     > div {
