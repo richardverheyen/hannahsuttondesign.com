@@ -124,7 +124,7 @@ $(document).ready(function() {
         }
       }
 
-      //Feature card animations
+      //page scroll animations
       var introGoodLooking = $('#intro h2 > span').offset().top;
       if (introGoodLooking < elementActivationPoint) {
         $('#intro h2 > span').addClass('active');
@@ -140,8 +140,12 @@ $(document).ready(function() {
       var finsecImages = $('#finsec .images img').offset().top;
       if (finsecImages < elementActivationPoint) {
         $('#finsec .images img:nth-last-child(3)').addClass('active');
-        $('#finsec .images img:nth-last-child(2)').addClass('active');
-        $('#finsec .images img:nth-last-child(1)').addClass('active');
+        setTimeout(function() {
+          $('#finsec .images img:nth-last-child(2)').addClass('active');
+        }, 500);
+        setTimeout(function() {
+          $('#finsec .images img:nth-last-child(1)').addClass('active');
+        }, 1000);
       };
       var karenWilliamsCard = $('#sliding-cards .feature-card').offset().top;
       if (karenWilliamsCard < elementActivationPoint) {
@@ -152,6 +156,8 @@ $(document).ready(function() {
       var karenWilliamsCardMobile = $('#sliding-cards .feature-card-mobile').offset().top;
       if (karenWilliamsCardMobile < elementActivationPoint) {
         $('#sliding-cards .feature-card-mobile').addClass('active');
+      } else {
+        $('#sliding-cards .feature-card-mobile').removeClass('active');
       };
     });
 
