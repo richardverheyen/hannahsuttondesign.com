@@ -4,15 +4,23 @@
     background-size: cover;
     background-position-x: 70%;
     height: 800px;
+    @media (max-width: 500px) {
+      height: 600px;
+    }
     div {
+      position: relative;
       display: flex;
       flex-direction: column;
       justify-content: center;
       height: 100%;
       #title {
-        margin-left: 25%;
+        position: absolute;
+        left: 25%;
         transform: translateX(-50%);
         width: 282px;
+        @media (max-width: 750px) {
+          left: 50%;
+        }
         h2 {
           position: relative;
           display: flex;
@@ -36,27 +44,6 @@
             bottom: -80px;
             transform: translateX(-50%);
             left: 50%;
-            @keyframes flippause {
-              0% {
-                transform: scaleX(1);
-              }
-              10% {
-                transform: scalex(-1);
-              }
-              20% {
-                transform: scaleX(1);
-              }
-              30% {
-                transform: scalex(-1);
-              }
-              40% {
-                transform: scalex(1);
-              }
-              100% {
-                transform: scaleX(1);
-              }
-            }
-            animation: flippause 10s ease-in-out infinite;
           }
         }
       }
@@ -159,14 +146,14 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            max-width: 320px;
+            max-width: 400px;
             margin: 0 auto 60px;
           }
           img {
             width: 100%;
             height: auto;
             @media (max-width: 600px) {
-              max-width: 320px;
+              max-width: 400px;
             }
           }
           h3 {
@@ -224,6 +211,7 @@
     background: url('/assets/img/about/chair-2000px.jpg');
     background-size: cover;
     background-position: 56%;
+    transform: translateY(-1px);
     > div {
       position: relative;
       height: 100%;
