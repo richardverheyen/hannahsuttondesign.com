@@ -2,7 +2,7 @@
   #hero {
     background-image: url('/assets/img/about/hero-2000px.jpg');
     background-size: cover;
-    background-position-x: 80%;
+    background-position-x: 70%;
     height: 800px;
     div {
       display: flex;
@@ -223,7 +223,7 @@
     height: 800px;
     background: url('/assets/img/about/chair-2000px.jpg');
     background-size: cover;
-    background-position: 66%;
+    background-position: 56%;
     > div {
       position: relative;
       height: 100%;
@@ -232,6 +232,10 @@
         top: 20%;
         left: 75%;
         transform: translateX(-50%);
+        @media (max-width: 550px) {
+          top: 10%;
+          left: 50%;
+        }
 
         h2 {
           color: white;

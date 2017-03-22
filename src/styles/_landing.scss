@@ -7,6 +7,7 @@
     height: 800px;
     overflow: hidden;
     @media (max-width: 600px) {
+      height: 700px;
       &:after {
         content: ('');
         position: absolute;
@@ -56,27 +57,6 @@
             bottom: -80px;
             transform: translateX(-50%);
             left: 50%;
-            // @keyframes flippause {
-            //   0% {
-            //     transform: scaleX(1) translateX(-50%);
-            //   }
-            //   10% {
-            //     transform: scalex(-1) translateX(-50%);
-            //   }
-            //   20% {
-            //     transform: scaleX(1) translateX(-50%);
-            //   }
-            //   30% {
-            //     transform: scalex(-1) translateX(-50%);
-            //   }
-            //   40% {
-            //     transform: scalex(1) translateX(-50%);
-            //   }
-            //   100% {
-            //     transform: scaleX(1) translateX(-50%);
-            //   }
-            // }
-            // animation: flippause 10s ease-in-out infinite;
           }
         }
       }
@@ -222,6 +202,7 @@
           font-size: 14px;
           font-weight: bold;
           letter-spacing: 2px;
+          z-index: 2;
           @media (max-width: 850px) {
             padding: 20px 60px 20px 20px;
             &:after {

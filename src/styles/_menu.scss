@@ -7,7 +7,7 @@
   width: 40vw;
   z-index: 2;
   transform: translateX(-100%);
-  transition: ease-in-out 600ms all;
+  transition: ease-in-out 600ms transform;
   background-color: $platinum;
   padding-top: 80px;
   @media (max-width: 800px) {
