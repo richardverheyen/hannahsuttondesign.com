@@ -176,7 +176,7 @@ $(document).ready(function() {
 
       $('.parallax').each(function() {
         var layer = $(this).attr('layer-data');
-        var $parallaxDepth = ($sectionOffset - viewFromTop) * layer / 10;
+        var $parallaxDepth = ($sectionOffset - 130 - viewFromTop) * layer / 10;
         $(this).css('top', $parallaxDepth);
       });
     });

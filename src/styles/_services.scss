@@ -209,6 +209,7 @@
 
       h2 {
         margin-bottom: 40px;
+        z-index: 3;
       }
       > img {
         max-width: 200px;
@@ -225,10 +226,9 @@
           display: flex;
           flex-direction: column;
           align-items: center;
-          position: absolute;
           text-align: center;
           color: $gold-leaf;
-          top: 0;
+          margin-bottom: auto;
           h4 {
             font-family: $body-font;
             font-weight: bold;
@@ -249,6 +249,7 @@
       top: 0;
       left: 0;
       height: 120vh;
+      min-height: 750px;
       width: 100vw;
       max-width: none;
       overflow: visible;
@@ -265,13 +266,13 @@
         div {
           img:nth-child(1) {
             //sad girl
-            top: 55%;
+            top: 47%;
             left: 15%;
             width: 50px;
           }
           img:nth-child(2) {
             //drink
-            top: 25%;
+            top: 23%;
             left: 85%;
             width: 50px;
           }
@@ -288,7 +289,7 @@
           }
           img:nth-child(2) {
             //girl
-            top: 38%;
+            top: 58%;
             left: 75%;
             width: 50px;
           }
@@ -299,8 +300,8 @@
         div {
           img:nth-child(1) {
             //kangaroo
-            top: 50%;
-            left: 30%;
+            top: 63%;
+            left: 27%;
             width: 120px;
           }
           img:nth-child(2) {
