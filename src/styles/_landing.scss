@@ -678,20 +678,23 @@
           @media (max-width: 400px) {
             font-size: 22px;
           }
-          &:after {
-            content: ('');
-            position: absolute;
-            bottom: -1px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: $gold-leaf;
-            transition: ease-in-out 200ms all;
-            z-index: 2;
-          }
-          &.active {
+          //short term fix for double click on ios touchscreen
+          @media (min-width: 500px) {
             &:after {
-              width: 100%;
+              content: ('');
+              position: absolute;
+              bottom: -1px;
+              left: 0;
+              width: 0;
+              height: 1px;
+              background: $gold-leaf;
+              transition: ease-in-out 200ms all;
+              z-index: 2;
+            }
+            &:hover {
+              &:after {
+                width: 100%;
+              }
             }
           }
         }
