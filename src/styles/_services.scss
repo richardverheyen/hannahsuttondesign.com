@@ -191,6 +191,9 @@
     position: relative;
     overflow: visible;
     background: $platinum;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     div {
       padding: 0;
@@ -214,6 +217,7 @@
       > div {
         display: flex;
         justify-content: center;
+        align-items: center;
         position: relative;
         width: 200px;
         height: 300px;
