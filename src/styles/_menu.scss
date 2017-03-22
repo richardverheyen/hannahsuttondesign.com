@@ -7,7 +7,7 @@
   width: 40vw;
   z-index: 2;
   transform: translateX(-100%);
-  transition: ease-in-out 600ms all;
+  transition: ease-in-out 600ms transform;
   background-color: $platinum;
   padding-top: 80px;
   @media (max-width: 800px) {
@@ -55,19 +55,21 @@
           @media (max-width: 700px) {
             font-size: 35px;
           }
-          &:after {
-            content: ('');
-            position: absolute;
-            bottom: 5px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: $gold-leaf;
-            transition: ease-in-out 200ms all;
-          }
-          &:hover {
+          @media (min-width: 500px) {
             &:after {
-              width: 100%;
+              content: ('');
+              position: absolute;
+              bottom: 5px;
+              left: 0;
+              width: 0;
+              height: 1px;
+              background: $gold-leaf;
+              transition: ease-in-out 200ms all;
+            }
+            &:hover {
+              &:after {
+                width: 100%;
+              }
             }
           }
         }
@@ -111,19 +113,21 @@
       @media (max-width: 700px) {
         font-size: 19px;
       }
-      &:after {
-        content: ('');
-        position: absolute;
-        bottom: -3px;
-        left: 0;
-        width: 0;
-        height: 1px;
-        background: $gold-leaf;
-        transition: ease-in-out 200ms all;
-      }
-      &:hover {
+      @media (min-width: 500px) {
         &:after {
-          width: 100%;
+          content: ('');
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          width: 0;
+          height: 1px;
+          background: $gold-leaf;
+          transition: ease-in-out 200ms all;
+        }
+        &:hover {
+          &:after {
+            width: 100%;
+          }
         }
       }
     }

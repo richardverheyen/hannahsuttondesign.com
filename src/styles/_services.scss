@@ -1,6 +1,5 @@
 #services {
-  header:before {
-    }
+  header:before {}
   #services-section {
     background: $platinum;
     padding-top: 80px;
@@ -78,6 +77,7 @@
           color: $gold-leaf;
           margin-top: 10px;
           margin-bottom: 100px;
+          z-index: 1;
 
           h4 {
             font-family: $body-font;
@@ -93,13 +93,13 @@
           li {}
           &:nth-child(1) {
             position: absolute;
-            left: 3%;
+            left: 1%;
             top: 0;
             transform: translatex(-50%);
           }
           &:nth-child(3) {
             position: absolute;
-            right: 3%;
+            right: 1%;
             top: 0;
             transform: translatex(50%);
           }
@@ -191,6 +191,9 @@
     position: relative;
     overflow: visible;
     background: $platinum;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     div {
       padding: 0;
@@ -206,12 +209,16 @@
 
       h2 {
         margin-bottom: 40px;
+        z-index: 3;
       }
       > img {
         max-width: 200px;
         margin-bottom: 10px;
       }
       > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         position: relative;
         width: 200px;
         height: 300px;
@@ -219,10 +226,9 @@
           display: flex;
           flex-direction: column;
           align-items: center;
-          position: absolute;
           text-align: center;
           color: $gold-leaf;
-          top: 0;
+          margin-bottom: auto;
           h4 {
             font-family: $body-font;
             font-weight: bold;
@@ -240,11 +246,13 @@
     .parallax {
       position: absolute;
 
-      top: -5vh;
+      top: 0;
       left: 0;
-      height: 110vh;
+      height: 120vh;
+      min-height: 750px;
       width: 100vw;
       max-width: none;
+      overflow: visible;
       div {
         position: relative;
         width: 100%;
@@ -258,13 +266,13 @@
         div {
           img:nth-child(1) {
             //sad girl
-            top: 65%;
+            top: 47%;
             left: 15%;
             width: 50px;
           }
           img:nth-child(2) {
             //drink
-            top: 25%;
+            top: 23%;
             left: 85%;
             width: 50px;
           }
@@ -275,13 +283,13 @@
         div {
           img:nth-child(1) {
             //2girls
-            top: 15%;
-            left: 20%;
+            top: 6%;
+            left: 10%;
             width: 80px;
           }
           img:nth-child(2) {
             //girl
-            top: 38%;
+            top: 58%;
             left: 75%;
             width: 50px;
           }
@@ -292,8 +300,8 @@
         div {
           img:nth-child(1) {
             //kangaroo
-            top: 50%;
-            left: 30%;
+            top: 63%;
+            left: 27%;
             width: 120px;
           }
           img:nth-child(2) {
@@ -315,7 +323,7 @@
           }
           img:nth-child(2) {
             //donut
-            top: 10%;
+            top: -15%;
             left: 45%;
             width: 80px;
           }
@@ -343,37 +351,37 @@
         div {
           img:nth-child(1) {
             //kangaroo
-            top: 10%;
+            top: -12%;
             left: 18%;
             width: 60px;
           }
           img:nth-child(2) {
             //donut
-            top: 4%;
+            top: 6%;
             left: 90%;
             width: 75px;
           }
           img:nth-child(3) {
             //kangaroo
-            top: 5%;
+            top: 12%;
             left: 22%;
             width: 32px;
           }
           img:nth-child(4) {
             //donut
             top: 60%;
-            left: 88%;
+            left: 93%;
             width: 45px;
           }
           img:nth-child(5) {
             //donut
-            top: 65%;
+            top: 82%;
             left: 52%;
             width: 30px;
           }
           img:nth-child(6) {
             //donut
-            top: 15%;
+            top: -5%;
             left: 72%;
             width: 45px;
           }

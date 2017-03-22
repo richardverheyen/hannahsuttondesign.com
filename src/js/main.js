@@ -105,6 +105,12 @@ $(document).ready(function() {
           $opacity = ($CAzeroPoint - $scrollPosition) * $scaling * -1;
           $('#cosmetic-avenue').css('opacity', $opacity);
           $('#cosmetic-avenue .background').css('opacity', $opacity);
+
+          //Cosmetic Avenue logo animation
+          var cosmeticAvenueImage = $('#ca-image').offset().top;
+          if (cosmeticAvenueImage < elementActivationPoint) {
+            $('#ca-image').addClass('active');
+          };
         }
       }
 
@@ -121,6 +127,12 @@ $(document).ready(function() {
           $opacity = ($JzeroPoint - $scrollPosition) * $scaling * -1;
           $('#jeep').css('opacity', $opacity);
           $('#jeep .background').css('opacity', $opacity);
+
+          //Jeep image animation
+          var jeepImage = $('#jeep-image').offset().top;
+          if (jeepImage < elementActivationPoint) {
+            $('#jeep-image').addClass('active');
+          };
         }
       }
 
@@ -129,14 +141,7 @@ $(document).ready(function() {
       if (introGoodLooking < elementActivationPoint) {
         $('#intro h2 > span').addClass('active');
       };
-      var cosmeticAvenueImage = $('#ca-image').offset().top;
-      if (cosmeticAvenueImage < elementActivationPoint) {
-        $('#ca-image').addClass('active');
-      };
-      var jeepImage = $('#jeep-image').offset().top;
-      if (jeepImage < elementActivationPoint) {
-        $('#jeep-image').addClass('active');
-      };
+
       var finsecImages = $('#finsec .images img').offset().top;
       if (finsecImages < elementActivationPoint) {
         $('#finsec .images img:nth-last-child(3)').addClass('active');
@@ -161,6 +166,20 @@ $(document).ready(function() {
       };
     });
 
+  };
+  if ($('body').is('#services')) {
+    $(window).scroll(function() {
+      var viewHeight = $(window).height();
+      var viewFromTop = $(window).scrollTop();
+      var $scrollPosition = viewFromTop + viewHeight;
+      var $sectionOffset = $('#illustration').offset().top;
+
+      $('.parallax').each(function() {
+        var layer = $(this).attr('layer-data');
+        var $parallaxDepth = ($sectionOffset - 130 - viewFromTop) * layer / 10;
+        $(this).css('top', $parallaxDepth);
+      });
+    });
   };
 
 });
