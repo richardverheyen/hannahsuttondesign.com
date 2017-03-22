@@ -16,8 +16,10 @@
       #title {
         position: absolute;
         left: 25%;
-        transform: translateX(-50%);
+        top: 60%;
+        transform: translate(-50%, -50%);
         width: 282px;
+        height: 100%;
         @media (max-width: 750px) {
           left: 50%;
         }

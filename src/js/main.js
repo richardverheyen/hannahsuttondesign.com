@@ -5,6 +5,10 @@ $(document).ready(function() {
 
   logoAnimation();
 
+  $('a').hover(function() {
+    $(this).toggleClass("active");
+  });
+
   //open side menu on header click
   $('#menu-link').on('click', function() {
     if (showingMenu) {

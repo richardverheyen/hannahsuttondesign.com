@@ -689,7 +689,7 @@
             transition: ease-in-out 200ms all;
             z-index: 2;
           }
-          &:hover {
+          &.active {
             &:after {
               width: 100%;
             }
