@@ -45,6 +45,9 @@
         background-image: url('/assets/img/services/ready-doctor@2x.png');
         background-size: contain;
         background-repeat: no-repeat;
+        @media (max-width: 500px) {
+          top: -100px;
+        }
       }
       &:after {
         content: ('');
@@ -59,6 +62,9 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
+        @media (max-width: 500px) {
+          bottom: -60px;
+        }
       }
       > h2 {
         margin-bottom: 40px;
@@ -68,7 +74,7 @@
       }
       > div {
         position: relative;
-        width: 260px;
+        width: 250px;
         ul {
           display: flex;
           flex-direction: column;
@@ -130,6 +136,9 @@
         background-image: url('/assets/img/services/red-dust@2x.png');
         background-size: contain;
         background-repeat: no-repeat;
+        @media (max-width: 500px) {
+          top: -100px;
+        }
       }
       &:after {
         content: ('');
@@ -144,6 +153,9 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
+        @media (max-width: 500px) {
+          bottom: -60px;
+        }
       }
       h2 {
         margin-bottom: 40px;
@@ -154,7 +166,7 @@
       }
       > div {
         position: relative;
-        width: 200px;
+        width: 180px;
         height: 300px;
         ul {
           display: flex;

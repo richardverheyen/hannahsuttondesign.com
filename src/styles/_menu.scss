@@ -1,6 +1,7 @@
 #menu {
   position: fixed;
   display: flex;
+  justify-content: center;
   top: 0;
   left: 0;
   height: 100vh;
@@ -9,36 +10,31 @@
   transform: translateX(-100%);
   transition: ease-in-out 600ms transform;
   background-color: $platinum;
-  padding-top: 80px;
   @media (max-width: 800px) {
     width: 100vw;
   }
 
-  div {
+  > div {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     color: $gold-leaf;
-    height: 100vh;
+    padding: 80px 20px 0;
     @media (max-width: 800px) {
       justify-content: center;
+      max-height: 650px;
+      margin: auto;
     }
     @media (max-width: 500px) {
       justify-content: flex-start;
     }
     ul {
-      margin-top: 20px;
-      @media (max-width: 800px) {
-        margin-top: -100px;
-      }
-      @media (max-width: 500px) {
-        margin-top: 20px;
-      }
+      margin: 20px 0 auto;
       li {
-        padding: 10px 0;
+        padding: 5px 0;
         margin: 10px 0;
         @media (max-width: 500px) {
-          padding: 5px 0;
+          padding: 2px 0;
           margin: 5px 0;
         }
         a {
@@ -52,8 +48,8 @@
           @media (max-width: 1000px) {
             font-size: 5vw;
           }
-          @media (max-width: 700px) {
-            font-size: 35px;
+          @media (max-width: 800px) {
+            font-size: 50px;
           }
           @media (min-width: 500px) {
             &:after {
@@ -79,7 +75,7 @@
       text-align: left;
       font-size: 32px;
       letter-spacing: 1.8px;
-      margin: 40px 0 10px;
+      margin: 5px 0 2px;
       cursor: default;
       @media (max-width: 1000px) {
         font-size: 3vw;
@@ -87,12 +83,11 @@
       @media (max-width: 700px) {
         font-size: 21px;
       }
-
     }
-    p {
-      font-size: 25px;
+    h3 {
+      font-size: 22px;
       color: $gold-leaf;
-      margin: 10px 0;
+      margin: 2px 0;
       cursor: default;
       @media (max-width: 1000px) {
         font-size: 2.5vw;
@@ -104,9 +99,9 @@
     > a {
       display: inline-table;
       position: relative;
-      font-size: 25px;
+      font-size: 22px;
       color: $gold-leaf;
-      margin: 10px 0;
+      margin: 5px 0;
       @media (max-width: 1000px) {
         font-size: 2.5vw;
       }
@@ -129,6 +124,20 @@
             width: 100%;
           }
         }
+      }
+    }
+    p {
+      font-size: 12px;
+      color: $gold-leaf;
+      margin: auto 0 5px;
+      cursor: default;
+      line-height: 100%;
+      &:nth-last-child(1) {
+        margin: 5px 0 20px;
+      }
+      @media (max-width: 700px) {
+        font-size: 10px;
+        margin: 2px 0;
       }
     }
   }
