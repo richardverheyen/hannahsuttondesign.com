@@ -69,14 +69,6 @@ $(document).ready(function() {
 
   };
 
-  $('#services #illustration .parallax img').each(function(index) {
-    var $id = index;
-    var $offset = Number($(this).offset());
-    var $yPosOriginal = Number($(this).css('top').replace('px', ''));
-    var $zPos = Number($(this).parent().parent().attr('data'));
-
-  });
-
   if ($('body').is('#landing')) {
     $(window).scroll(function() {
       var viewHeight = $(window).height();
