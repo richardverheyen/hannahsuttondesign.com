@@ -23,11 +23,12 @@
         content: ('');
         height: 160px;
         width: 100%;
-        bottom: -160px;
+        opacity: 0;
         background-image: url('/assets/img/portfolio/black-gradient.png');
         background-size: contain;
         left: 0;
-        transition: ease-out 300ms bottom;
+        bottom: 0;
+        transition: ease-out 500ms opacity;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
@@ -45,7 +46,7 @@
       }
       &:hover {
         .portfolio-item-overlay {
-          bottom: 0;
+          opacity: 1;
         }
       }
     }
