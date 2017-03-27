@@ -118,9 +118,9 @@
             div {
               position: relative;
               width: 35vw;
-              height: 35vw;
+              height: 44vw;
               margin: auto 0;
-              max-height: 400px;
+              max-height: 600px;
               min-width: 205px;
               @media (max-width: 380px) {
                 height: 60vw;
@@ -133,21 +133,21 @@
                 transition: all ease-out 1200ms;
                 &:nth-child(1) {
                   width: 35vw;
-                  max-width: 400px;
+                  max-width: 600px;
                   bottom: 0;
                   right: 0;
                   min-width: 225px;
                 }
                 &:nth-last-child(2) {
                   width: 15.6vw;
-                  max-width: 160px;
+                  max-width: 240px;
                   right: -10px;
                   bottom: -9px;
                   min-width: 100px;
                 }
                 &:nth-last-child(1) {
                   width: 7.8vw;
-                  max-width: 80px;
+                  max-width: 120px;
                   right: -30px;
                   bottom: -13px;
                   min-width: 50px;
