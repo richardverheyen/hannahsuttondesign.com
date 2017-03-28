@@ -38,7 +38,7 @@
           font-size: 4vw;
         }
         @media (max-width: 400px) {
-          font-size: 15px;
+          font-size: 18px;
         }
       }
       h3 {
@@ -53,7 +53,7 @@
           line-height: 135%;
         }
         @media (max-width: 400px) {
-          font-size: 14px;
+          font-size: 16px;
         }
       }
       > img:nth-child(1) {
@@ -67,6 +67,9 @@
       > img:nth-last-child(1) {
         margin-bottom: 100px;
         height: 40px;
+        @media (max-width: 600px) {
+          margin-bottom: 40px;
+        }
       }
     }
   }
