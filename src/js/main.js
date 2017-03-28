@@ -174,4 +174,8 @@ $(document).ready(function() {
     });
   };
 
+  if ($('body').is('#project-karen-williams')) {
+    $('.feature-card').addClass('active');
+  };
+
 });
