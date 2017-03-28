@@ -176,6 +176,16 @@ $(document).ready(function() {
 
   if ($('body').is('#project-karen-williams')) {
     $('.feature-card').addClass('active');
+    $('#project-footer .right').attr('href', '/feature-project/jeep');
+  };
+  if ($('body').is('#project-jeep')) {
+    $('#project-footer .right').attr('href', '/feature-project/cosmetic-avenue');
+  };
+  if ($('body').is('#project-cosmetic-avenue')) {
+    $('#project-footer .right').attr('href', '/feature-project/finsec');
+  };
+  if ($('body').is('#project-finsec')) {
+    $('#project-footer .right').attr('href', '/feature-project/karen-williams');
   };
 
 });
