@@ -434,6 +434,7 @@
     background-size: cover;
     height: 66vw;
     min-height: 500px;
+    position: relative; //hides the above parallax items behind this section
     div {
       display: flex;
       flex-direction: column;
