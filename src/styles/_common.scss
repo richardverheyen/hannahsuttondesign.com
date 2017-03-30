@@ -275,3 +275,17 @@ body.menu-active {
     }
   }
 }
+//Parallax Background styles
+main {
+  .parallax-background {
+    position: absolute;
+    width: 100vw;
+    transition: opacity 400ms linear;
+    transition: transform 20ms linear;
+    top: 0;
+  }
+  #cosmetic-avenue.parallax-background {
+    top: 0;
+    background: url('/assets/img/landing/cosmetic-avenue/background.jpg');
+  }
+}

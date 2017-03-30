@@ -1,12 +1,13 @@
 #landing {
+
   #feature-projects {
     > div {
       text-align: center;
       position: relative;
-      margin: 100px 0;
+      padding: 100px 0;
       overflow: visible;
       @media (max-width: 600px) {
-        margin: 30px 0;
+        padding: 30px 0;
       }
       h2 {
         font-size: 48px;
@@ -52,15 +53,15 @@
         z-index: 1;
         > div {
           z-index: 0;
-          > .background {
-            //background images with parallax effect
-            position: absolute;
-            top: 0;
-            background: url('/assets/img/landing/cosmetic-avenue/background-texture.png');
-            background-color: #142c45;
-            background-repeat: no-repeat;
-            background-size: cover;
-          }
+          // > .background {
+          //   //background images with parallax effect
+          //   position: absolute;
+          //   top: 0;
+          //   background: url('/assets/img/landing/cosmetic-avenue/background-texture.png');
+          //   background-color: #142c45;
+          //   background-repeat: no-repeat;
+          //   background-size: cover;
+          // }
           .images {
             img {
               width: 45vw;
@@ -75,14 +76,14 @@
       #jeep {
         z-index: 2;
         div {
-          > .background {
-            //background images with parallax effect
-            position: absolute;
-            top: 0;
-            background: url('/assets/img/landing/jeep/background-texture.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-          }
+          // > .background {
+          //   //background images with parallax effect
+          //   position: absolute;
+          //   top: 0;
+          //   background: url('/assets/img/landing/jeep/background-texture.jpg');
+          //   background-repeat: no-repeat;
+          //   background-size: cover;
+          // }
           .aside {
             left: 80%;
             @media (max-width: 600px) {
@@ -102,11 +103,11 @@
       }
       #finsec {
         z-index: 3;
-        background: url('/assets/img/landing/finsec/background.jpg');
+        // background: url('/assets/img/landing/finsec/background.jpg');
         > div {
-          .background {
-            height: 100%;
-          }
+          // .background {
+          //   height: 100%;
+          // }
           .images {
             left: 66%;
             @media (max-width: 720px) {

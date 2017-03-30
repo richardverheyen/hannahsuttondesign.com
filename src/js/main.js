@@ -69,96 +69,96 @@ $(document).ready(function() {
 
   };
 
-  if ($('body').is('#landing')) {
-    $(window).scroll(function() {
-      var viewHeight = $(window).height();
-      var viewFromTop = $(window).scrollTop();
-      var $scrollPosition = viewFromTop + viewHeight;
-
-      var $cosmeticAvenueTop = $('#cosmetic-avenue').offset().top;
-      var $cosmeticAvenueHeight = $('#cosmetic-avenue').height();
-      var $jeepTop = $('#jeep').offset().top;
-      var $jeepHeight = $('#jeep').height();
-      var elementActivationPoint = viewFromTop + (viewHeight * 3 / 5);
-
-      // scale the movement relative to screen size using the correct scaling factor so it falls within 0 and 1
-      var $scaling = 10 / (4 * viewHeight);
-      if ($cosmeticAvenueTop - viewHeight <= viewFromTop) {
-        if (viewFromTop <= $cosmeticAvenueTop + $cosmeticAvenueHeight) {
-          console.log('youre in the ca section');
-          $('#cosmetic-avenue .background').css('top', -(viewFromTop - $cosmeticAvenueTop) / 5 - ($cosmeticAvenueHeight / 5) - // sliding down;
-            $cosmeticAvenueHeight / 2 +
-            ('px')
-          );
-
-          // set 0 point using a function of everything but viewHeight
-          var $CAzeroPoint = $cosmeticAvenueTop + (viewHeight / 4);
-          // Use viewHeight to vary the parallax around the 0 point
-          $opacity = ($CAzeroPoint - $scrollPosition) * $scaling * -1;
-          $('#cosmetic-avenue').css('opacity', $opacity);
-          $('#cosmetic-avenue .background').css('opacity', $opacity);
-
-          //Cosmetic Avenue logo animation
-          var cosmeticAvenueImage = $('#ca-image').offset().top;
-          if (cosmeticAvenueImage < elementActivationPoint) {
-            $('#ca-image').addClass('active');
-          };
-        }
-      }
-
-      //Jeep parallax section
-      if ($jeepTop - viewHeight <= viewFromTop) {
-        if (viewFromTop <= $jeepTop + $jeepHeight) {
-          console.log('youre in the jeep section');
-          $('#jeep .background').css('top', -(viewFromTop - $jeepTop) / 5 - ($jeepHeight / 12) - // sliding down;
-            $jeepHeight / 2 +
-            ('px')
-          );
-          // set 0 point using a function of everything but viewHeight
-          var $JzeroPoint = $jeepTop + (viewHeight / 4);
-          $opacity = ($JzeroPoint - $scrollPosition) * $scaling * -1;
-          $('#jeep').css('opacity', $opacity);
-          $('#jeep .background').css('opacity', $opacity);
-
-          //Jeep image animation
-          var jeepImage = $('#jeep-image').offset().top;
-          if (jeepImage < elementActivationPoint) {
-            $('#jeep-image').addClass('active');
-          };
-        }
-      }
-
-      //page scroll animations
-      var introGoodLooking = $('#intro h2 > span').offset().top;
-      if (introGoodLooking < elementActivationPoint) {
-        $('#intro h2 > span').addClass('active');
-      };
-
-      var finsecImages = $('#finsec .images img').offset().top;
-      if (finsecImages < elementActivationPoint) {
-        $('#finsec .images img:nth-last-child(3)').addClass('active');
-        setTimeout(function() {
-          $('#finsec .images img:nth-last-child(2)').addClass('active');
-        }, 500);
-        setTimeout(function() {
-          $('#finsec .images img:nth-last-child(1)').addClass('active');
-        }, 1000);
-      };
-      var karenWilliamsCard = $('#sliding-cards .feature-card').offset().top;
-      if (karenWilliamsCard < elementActivationPoint) {
-        $('#sliding-cards .feature-card').addClass('active');
-      } else {
-        $('#sliding-cards .feature-card').removeClass('active');
-      };
-      var karenWilliamsCardMobile = $('#sliding-cards .feature-card-mobile').offset().top;
-      if (karenWilliamsCardMobile < elementActivationPoint) {
-        $('#sliding-cards .feature-card-mobile').addClass('active');
-      } else {
-        $('#sliding-cards .feature-card-mobile').removeClass('active');
-      };
-    });
-
-  };
+  // if ($('body').is('#landing')) {
+  //   $(window).scroll(function() {
+  //     var viewHeight = $(window).height();
+  //     var viewFromTop = $(window).scrollTop();
+  //     var $scrollPosition = viewFromTop + viewHeight;
+  //
+  //     // var $cosmeticAvenueTop = $('#cosmetic-avenue').offset().top;
+  //     // var $cosmeticAvenueHeight = $('#cosmetic-avenue').height();
+  //     // var $jeepTop = $('#jeep').offset().top;
+  //     // var $jeepHeight = $('#jeep').height();
+  //     var elementActivationPoint = viewFromTop + (viewHeight * 3 / 5);
+  //
+  //     // //scale the movement relative to screen size using the correct scaling factor so it falls within 0 and 1
+  //     // var $scaling = 10 / (4 * viewHeight);
+  //     // if ($cosmeticAvenueTop - viewHeight <= viewFromTop) {
+  //     //   if (viewFromTop <= $cosmeticAvenueTop + $cosmeticAvenueHeight) {
+  //     //     console.log('youre in the ca section');
+  //     //     $('#cosmetic-avenue .background').css('top', -(viewFromTop - $cosmeticAvenueTop) / 5 - ($cosmeticAvenueHeight / 5) - // sliding down;
+  //     //       $cosmeticAvenueHeight / 2 +
+  //     //       ('px')
+  //     //     );
+  //     //
+  //     //     // set 0 point using a function of everything but viewHeight
+  //     //     var $CAzeroPoint = $cosmeticAvenueTop + (viewHeight / 4);
+  //     //     // Use viewHeight to vary the parallax around the 0 point
+  //     //     $opacity = ($CAzeroPoint - $scrollPosition) * $scaling * -1;
+  //     //     $('#cosmetic-avenue').css('opacity', $opacity);
+  //     //     $('#cosmetic-avenue .background').css('opacity', $opacity);
+  //     //
+  //     //     //Cosmetic Avenue logo animation
+  //     //     var cosmeticAvenueImage = $('#ca-image').offset().top;
+  //     //     if (cosmeticAvenueImage < elementActivationPoint) {
+  //     //       $('#ca-image').addClass('active');
+  //     //     };
+  //     //   }
+  //     // }
+  //     //
+  //     // //Jeep parallax section
+  //     // if ($jeepTop - viewHeight <= viewFromTop) {
+  //     //   if (viewFromTop <= $jeepTop + $jeepHeight) {
+  //     //     console.log('youre in the jeep section');
+  //     //     $('#jeep .background').css('top', -(viewFromTop - $jeepTop) / 5 - ($jeepHeight / 12) - // sliding down;
+  //     //       $jeepHeight / 2 +
+  //     //       ('px')
+  //     //     );
+  //     //     // set 0 point using a function of everything but viewHeight
+  //     //     var $JzeroPoint = $jeepTop + (viewHeight / 4);
+  //     //     $opacity = ($JzeroPoint - $scrollPosition) * $scaling * -1;
+  //     //     $('#jeep').css('opacity', $opacity);
+  //     //     $('#jeep .background').css('opacity', $opacity);
+  //     //
+  //     //     //Jeep image animation
+  //     //     var jeepImage = $('#jeep-image').offset().top;
+  //     //     if (jeepImage < elementActivationPoint) {
+  //     //       $('#jeep-image').addClass('active');
+  //     //     };
+  //     //   }
+  //     // }
+  //
+  //     //page scroll animations
+  //     var introGoodLooking = $('#intro h2 > span').offset().top;
+  //     if (introGoodLooking < elementActivationPoint) {
+  //       $('#intro h2 > span').addClass('active');
+  //     };
+  //
+  //     var finsecImages = $('#finsec .images img').offset().top;
+  //     if (finsecImages < elementActivationPoint) {
+  //       $('#finsec .images img:nth-last-child(3)').addClass('active');
+  //       setTimeout(function() {
+  //         $('#finsec .images img:nth-last-child(2)').addClass('active');
+  //       }, 500);
+  //       setTimeout(function() {
+  //         $('#finsec .images img:nth-last-child(1)').addClass('active');
+  //       }, 1000);
+  //     };
+  //     var karenWilliamsCard = $('#sliding-cards .feature-card').offset().top;
+  //     if (karenWilliamsCard < elementActivationPoint) {
+  //       $('#sliding-cards .feature-card').addClass('active');
+  //     } else {
+  //       $('#sliding-cards .feature-card').removeClass('active');
+  //     };
+  //     var karenWilliamsCardMobile = $('#sliding-cards .feature-card-mobile').offset().top;
+  //     if (karenWilliamsCardMobile < elementActivationPoint) {
+  //       $('#sliding-cards .feature-card-mobile').addClass('active');
+  //     } else {
+  //       $('#sliding-cards .feature-card-mobile').removeClass('active');
+  //     };
+  //   });
+  //
+  // };
   if ($('body').is('#services')) {
     $(window).scroll(function() {
       var viewHeight = $(window).height();
@@ -187,5 +187,44 @@ $(document).ready(function() {
   if ($('body').is('#project-finsec')) {
     $('#project-footer .right').attr('href', '/feature-project/karen-williams');
   };
+
+  //////////////////////////
+  /////////////////////////////
+  ////////////////////////////
+
+  $('.parallax-section').each(function() {
+    var id = $(this).attr('id');
+    var $background = $('main>.parallax-background#' + id);
+    var sectionHeight = $(this).height();
+    var sectionOffset = $(this).offset().top;
+    var viewHeight = $(window).height();
+    var fadeInStart = sectionOffset + (viewHeight / 3);
+    var fadeInEnd = sectionOffset + (2 * viewHeight / 3);
+    var fadeOutStart = fadeInStart + sectionHeight;
+    var fadeOutEnd = fadeInEnd + sectionHeight;
+
+    //set the start point of the parallax background-position
+    $background.css('height', sectionHeight);
+
+    $(window).scroll(function() {
+      var scrollTop = $(window).scrollTop()
+      var scrollPosition = $(window).scrollTop() + viewHeight;
+
+      if (scrollPosition > fadeInStart) {
+        if (fadeInEnd > scrollPosition) {
+          var fadeInOpacity = (scrollPosition - fadeInStart) / (fadeInEnd - fadeInStart);
+          $background.css('opacity', fadeInOpacity);
+        }
+      }
+      //Checks to set opacity at 1 or 0 if user scrolls faster than ScrollTop ticks.
+      if (scrollPosition >= fadeInEnd) {
+        $background.css('opacity', 1);
+      }
+      if (scrollPosition <= fadeInStart) {
+        $background.css('opacity', 0);
+      }
+    });
+
+  });
 
 });
