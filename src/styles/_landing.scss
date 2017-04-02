@@ -297,23 +297,4 @@
       }
     }
   }
-
-  .animateFadeInRight {
-    opacity: 0;
-    transition: all ease-out 800ms;
-    transform: translateX(30px);
-    &.active {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-  .animateFadeInLeft {
-    opacity: 0;
-    transition: all ease-out 800ms;
-    transform: translateX(-30px);
-    &.active {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
 }

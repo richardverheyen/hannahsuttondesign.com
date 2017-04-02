@@ -6,44 +6,25 @@ $(document).ready(function() {
   logoAnimation();
 
   //open side menu on header click
-  $('#menu-link').on('click', function() {
+  $('#menu-link,.contact-button').on('click', function() {
     if (showingMenu) {
       $('body').removeClass('menu-active');
       $('#menu-link a').html('<a href="#">menu</a>');
       showingMenu = false;
       logoToggle();
       event.preventDefault();
-
     } else {
       $('body').addClass('menu-active');
       $('#menu-link a').html('<a href="#">close</a>');
       showingMenu = true;
       logoToggle();
       event.preventDefault();
-
     };
     return showingMenu;
   });
 
-  // short term, open side menu on 'contact' click
-  $('.contact-button').on('click', function() {
-    if (showingMenu) {
-      $('body').removeClass('menu-active');
-      $('#menu-link a').html('<a href="#">menu</a>');
-      showingMenu = false;
-      logoToggle();
-      event.preventDefault();
-
-    } else {
-      $('body').addClass('menu-active');
-      $('#menu-link a').html('<a href="#">close</a>');
-      showingMenu = true;
-      logoToggle();
-      event.preventDefault();
-
-    };
-    return showingMenu;
-  });
+  // // short term, open side menu on 'contact' click
+  // $('.contact-button').on('click', toggleMenu());
 
   //Animate the Logo titles outwards from the Logo Egg
   function logoToggle() {
@@ -66,99 +47,89 @@ $(document).ready(function() {
     setTimeout(function() {
       $('#logo a').removeClass('animate');
     }, 1500);
-
   };
 
   if ($('body').is('#landing')) {
+    var viewHeight = $(window).height();
+
+    var finsecImagesOffset = $('#finsec .images img').offset().top;
+    var finsecImagesCompleted = false;
+    var lookingGoodOffset = $('#lookingGood').offset().top;
+    var lookingGoodCompleted = false;
+    var cardMobileOffset = $('#cardMobile').offset().top;
+    var cardMobileCompleted = false;
+    var cardDesktopOffset = $('#cardDesktop').offset().top;
+    var cardDesktopCompleted = false;
+    var jeepImageOffset = $('#jeepImage').offset().top;
+    var jeepImageCompleted = false;
+    var caImageOffset = $('#caImage').offset().top;
+    var caImageCompleted = false;
+
     $(window).scroll(function() {
-      var viewHeight = $(window).height();
-      var viewFromTop = $(window).scrollTop();
-      var $scrollPosition = viewFromTop + viewHeight;
+      var $scrollPosition = $(window).scrollTop() + viewHeight;
+      var scrollActivationPoint = $(window).scrollTop() + (viewHeight * 3 / 5);
 
-      var $cosmeticAvenueTop = $('#cosmetic-avenue').offset().top;
-      var $cosmeticAvenueHeight = $('#cosmetic-avenue').height();
-      var $jeepTop = $('#jeep').offset().top;
-      var $jeepHeight = $('#jeep').height();
-      var elementActivationPoint = viewFromTop + (viewHeight * 3 / 5);
+      // Parallax effect for cosmetic-avenue sections
+      if ($scrollPosition > $('#cosmetic-avenue').offset().top) {
+        if ($(window).scrollTop() < $('#cosmetic-avenue').offset().top + $('#cosmetic-avenue').height()) {
+          var cosmeticAvenueParallax = -($('#cosmetic-avenue').height() / 5) * ($scrollPosition - $('#cosmetic-avenue').offset().top) / ($('#cosmetic-avenue').height() + viewHeight);
+          $('#cosmetic-avenue .parallaxBackground').css('transform', 'translateY(' + cosmeticAvenueParallax + 'px)');
+        };
+      };
 
-      // scale the movement relative to screen size using the correct scaling factor so it falls within 0 and 1
-      var $scaling = 10 / (4 * viewHeight);
-      if ($cosmeticAvenueTop - viewHeight <= viewFromTop) {
-        if (viewFromTop <= $cosmeticAvenueTop + $cosmeticAvenueHeight) {
-          console.log('youre in the ca section');
-          $('#cosmetic-avenue .background').css('top', -(viewFromTop - $cosmeticAvenueTop) / 5 - ($cosmeticAvenueHeight / 5) - // sliding down;
-            $cosmeticAvenueHeight / 2 +
-            ('px')
-          );
+      // Parallax effect for jeep sections
+      if ($scrollPosition > $('#jeep').offset().top) {
+        if ($(window).scrollTop() < $('#jeep').offset().top + $('#jeep').height()) {
+          var jeepParallax = -($('#jeep').height() / 5) * ($scrollPosition - $('#jeep').offset().top) / ($('#jeep').height() + viewHeight);
+          $('#jeep .parallaxBackground').css('transform', 'translateY(' + jeepParallax + 'px)');
+        };
+      };
 
-          // set 0 point using a function of everything but viewHeight
-          var $CAzeroPoint = $cosmeticAvenueTop + (viewHeight / 4);
-          // Use viewHeight to vary the parallax around the 0 point
-          $opacity = ($CAzeroPoint - $scrollPosition) * $scaling * -1;
-          $('#cosmetic-avenue').css('opacity', $opacity);
-          $('#cosmetic-avenue .background').css('opacity', $opacity);
-
-          //Cosmetic Avenue logo animation
-          var cosmeticAvenueImage = $('#ca-image').offset().top;
-          if (cosmeticAvenueImage < elementActivationPoint) {
-            $('#ca-image').addClass('active');
-          };
+      //Animate in elements which activate on page scroll
+      if (!lookingGoodCompleted) {
+        if (scrollActivationPoint > lookingGoodOffset) {
+          $('#lookingGood').addClass('active');
+          var lookingGoodCompleted = true;
+        };
+      };
+      if (!cardMobileCompleted) {
+        if (scrollActivationPoint > cardMobileOffset) {
+          $('#cardMobile').addClass('active');
+          var cardMobileCompleted = true;
+        };
+      };
+      if (!cardDesktopCompleted) {
+        if (scrollActivationPoint > cardDesktopOffset) {
+          $('#cardDesktop').addClass('active');
+          var cardDesktopCompleted = true;
         }
       }
-
-      //Jeep parallax section
-      if ($jeepTop - viewHeight <= viewFromTop) {
-        if (viewFromTop <= $jeepTop + $jeepHeight) {
-          console.log('youre in the jeep section');
-          $('#jeep .background').css('top', -(viewFromTop - $jeepTop) / 5 - ($jeepHeight / 12) - // sliding down;
-            $jeepHeight / 2 +
-            ('px')
-          );
-          // set 0 point using a function of everything but viewHeight
-          var $JzeroPoint = $jeepTop + (viewHeight / 4);
-          $opacity = ($JzeroPoint - $scrollPosition) * $scaling * -1;
-          $('#jeep').css('opacity', $opacity);
-          $('#jeep .background').css('opacity', $opacity);
-
-          //Jeep image animation
-          var jeepImage = $('#jeep-image').offset().top;
-          if (jeepImage < elementActivationPoint) {
-            $('#jeep-image').addClass('active');
-          };
-        }
-      }
-
-      //page scroll animations
-      var introGoodLooking = $('#intro h2 > span').offset().top;
-      if (introGoodLooking < elementActivationPoint) {
-        $('#intro h2 > span').addClass('active');
+      if (!jeepImageCompleted) {
+        if (scrollActivationPoint > jeepImageOffset) {
+          $('#jeepImage').addClass('active');
+          var jeepImageCompleted = true;
+        };
       };
-
-      var finsecImages = $('#finsec .images img').offset().top;
-      if (finsecImages < elementActivationPoint) {
-        $('#finsec .images img:nth-last-child(3)').addClass('active');
-        setTimeout(function() {
-          $('#finsec .images img:nth-last-child(2)').addClass('active');
-        }, 500);
-        setTimeout(function() {
-          $('#finsec .images img:nth-last-child(1)').addClass('active');
-        }, 1000);
+      if (!caImageCompleted) {
+        if (scrollActivationPoint > caImageOffset) {
+          $('#caImage').addClass('active');
+          var caImageCompleted = true;
+        };
       };
-      var karenWilliamsCard = $('#sliding-cards .feature-card').offset().top;
-      if (karenWilliamsCard < elementActivationPoint) {
-        $('#sliding-cards .feature-card').addClass('active');
-      } else {
-        $('#sliding-cards .feature-card').removeClass('active');
-      };
-      var karenWilliamsCardMobile = $('#sliding-cards .feature-card-mobile').offset().top;
-      if (karenWilliamsCardMobile < elementActivationPoint) {
-        $('#sliding-cards .feature-card-mobile').addClass('active');
-      } else {
-        $('#sliding-cards .feature-card-mobile').removeClass('active');
+      if (!finsecImagesCompleted) {
+        if (scrollActivationPoint > finsecImagesOffset) {
+          $('#finsec .images img:nth-last-child(3)').addClass('active');
+          setTimeout(function() {
+            $('#finsec .images img:nth-last-child(2)').addClass('active');
+          }, 500);
+          setTimeout(function() {
+            $('#finsec .images img:nth-last-child(1)').addClass('active');
+          }, 1000);
+        };
       };
     });
-
   };
+
   if ($('body').is('#services')) {
     $(window).scroll(function() {
       var viewHeight = $(window).height();
@@ -174,8 +145,9 @@ $(document).ready(function() {
     });
   };
 
+  //Change footer links for individual projects
   if ($('body').is('#project-karen-williams')) {
-    $('.feature-card').addClass('active');
+    $('.feature-card').addClass('active'); //animate the rising card
     $('#project-footer .right').attr('href', '/feature-project/jeep');
   };
   if ($('body').is('#project-jeep')) {

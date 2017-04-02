@@ -5,6 +5,7 @@
       position: relative;
       margin: 100px 0;
       overflow: visible;
+      max-width: none;
       @media (max-width: 600px) {
         margin: 30px 0;
       }
@@ -49,10 +50,9 @@
     }
     > ul {
       #cosmetic-avenue {
-        z-index: 1;
         > div {
           z-index: 0;
-          > .background {
+          > .parallaxBackground {
             //background images with parallax effect
             position: absolute;
             top: 0;
@@ -65,17 +65,23 @@
             img {
               width: 45vw;
               min-height: 90px;
+              opacity: 0;
+              transform: translateX(30px);
+              transition: all ease-out 600ms;
               @media (max-width: 600px) {
                 height: 13.8vw;
+              }
+              &.active {
+                opacity: 1;
+                transform: translateX(0);
               }
             }
           }
         }
       }
       #jeep {
-        z-index: 2;
         div {
-          > .background {
+          > .parallaxBackground {
             //background images with parallax effect
             position: absolute;
             top: 0;
@@ -96,12 +102,18 @@
             }
             img {
               width: 62vw;
+              opacity: 0;
+              transform: translateX(-30px);
+              transition: all ease-out 600ms;
+              &.active {
+                opacity: 1;
+                transform: translateX(0);
+              }
             }
           }
         }
       }
       #finsec {
-        z-index: 3;
         background: url('/assets/img/landing/finsec/background.jpg');
         > div {
           .background {
@@ -109,18 +121,12 @@
           }
           .images {
             left: 66%;
-            @media (max-width: 720px) {
-              margin-bottom: 70px;
-            }
-            @media (max-width: 600px) {
-              margin-bottom: 50px;
-            }
+
             div {
               position: relative;
               width: 35vw;
-              height: 44vw;
+              height: 35vw;
               margin: auto 0;
-              max-height: 600px;
               min-width: 205px;
               @media (max-width: 380px) {
                 height: 60vw;
@@ -128,25 +134,23 @@
 
               > img {
                 position: absolute;
-                transform: translatex(50px);
                 opacity: 0;
-                transition: all ease-out 1200ms;
+                transform: translateX(30px);
+                transition: all ease 1200ms;
                 &:nth-child(1) {
-                  width: 35vw;
-                  max-width: 600px;
+                  width: 100%;
                   bottom: 0;
                   right: 0;
                   min-width: 225px;
                 }
                 &:nth-last-child(2) {
-                  width: 15.6vw;
-                  max-width: 240px;
+                  width: 46%;
                   right: -10px;
                   bottom: -9px;
                   min-width: 100px;
                 }
                 &:nth-last-child(1) {
-                  width: 7.8vw;
+                  width: 20%;
                   max-width: 120px;
                   right: -30px;
                   bottom: -13px;
@@ -162,10 +166,8 @@
         }
       }
       #karen-williams {
-        z-index: 4;
         background: url('/assets/img/landing/karen-williams/background.jpg');
         > div {
-          overflow: hidden;
           > .background {
             transform-origin: 100% 50%;
             height: 250%;
@@ -245,7 +247,7 @@
               }
               .feature-card,
               .feature-card-mobile {
-                transition: all ease-out 1200ms;
+                transition: all ease 800ms;
                 &.active {
                   transform: translate(18px, -28px);
                 }
@@ -270,6 +272,7 @@
         > div {
           display: flex;
           position: relative;
+          overflow: hidden;
           z-index: 1;
           height: 120vw;
           min-height: 750px;
@@ -412,9 +415,19 @@
         }
         .background {
           position: absolute;
-          height: 250%;
+          height: 100%;
           width: 100vw;
           z-index: 1;
+          &:nth-last-child(1) {
+            z-index: 2;
+          }
+        }
+        .parallaxBackground {
+          position: absolute;
+          height: 120%;
+          width: 100vw;
+          z-index: 1;
+          transition: all linear 50ms;
           &:nth-last-child(1) {
             z-index: 2;
           }
