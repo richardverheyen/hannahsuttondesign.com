@@ -1,6 +1,4 @@
 //Google Analytics start
-/* jshint ignore:start */
-
 (function(i, s, o, g, r, a, m) {
   i['GoogleAnalyticsObject'] = r;
   i[r] = i[r] || function() {
@@ -11,7 +9,6 @@
   a.src = g;
   m.parentNode.insertBefore(a, m)
 })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-/* jshint ignore:end */
 ga('create', 'UA-85086943-1', 'auto');
 ga('send', 'pageview');
 //Google Analytics end

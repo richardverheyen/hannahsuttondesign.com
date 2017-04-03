@@ -24,8 +24,8 @@
         height: 160px;
         width: 100%;
         opacity: 0;
-        background-image: url('/assets/img/portfolio/black-gradient.png');
-        background-size: contain;
+        background: linear-gradient(transparent, black);
+        background-size: cover;
         left: 0;
         bottom: 0;
         transition: ease-out 500ms opacity;
