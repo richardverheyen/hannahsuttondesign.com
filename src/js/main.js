@@ -12,13 +12,8 @@
   m.parentNode.insertBefore(a, m)
 })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 /* jshint ignore:end */
-if (!!ga) {
-  ga('create', 'UA-85086943-1', 'auto');
-  ga('set', {
-    dimension1: environment
-  });
-  ga('send', 'pageview');
-}
+ga('create', 'UA-85086943-1', 'auto');
+ga('send', 'pageview');
 //Google Analytics end
 
 var showingMenu = false;
