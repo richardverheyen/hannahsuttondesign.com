@@ -1,5 +1,9 @@
 #services {
-  header:before {}
+  user-select: none;
+  cursor: default;
+  a {
+    cursor: pointer;
+  }
   #services-section {
     background: $platinum;
     padding-top: 80px;

@@ -1,4 +1,9 @@
 #project-karen-williams {
+  user-select: none;
+  cursor: default;
+  a {
+    cursor: pointer;
+  }
   header {
     background-color: black;
   }

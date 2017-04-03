@@ -65,6 +65,44 @@ $(document).ready(function() {
   };
 
   if ($('body').is('#landing')) {
+
+    //start js parallax
+    var last_known_scroll_position = 0;
+    var ticking = false;
+
+    function jeepParallax(scroll_pos) {
+      var jeepParallax = -($('#jeep').height() / 5) * (scroll_pos + $(window).height() - $('#jeep').offset().top) / ($('#jeep').height() + $(window).height());
+      $('#jeep .parallaxBackground').css('transform', 'translateY(' + jeepParallax + 'px)');
+    }
+
+    function caParallax(scroll_pos) {
+      var cosmeticAvenueParallax = -($('#cosmetic-avenue').height() / 5) * (scroll_pos + $(window).height() - $('#cosmetic-avenue').offset().top) / ($('#cosmetic-avenue').height() + $(window).height());
+      $('#cosmetic-avenue .parallaxBackground').css('transform', 'translateY(' + cosmeticAvenueParallax + 'px)');
+    }
+
+    window.addEventListener('scroll', function(e) {
+      last_known_scroll_position = window.scrollY;
+      if (!ticking) {
+        window.requestAnimationFrame(function() {
+
+          if (last_known_scroll_position + $(window).height() > $('#jeep').offset().top) {
+            if ($(window).scrollTop() < $('#jeep').offset().top + $('#jeep').height()) {
+              jeepParallax(last_known_scroll_position);
+            };
+          };
+
+          if (last_known_scroll_position + $(window).height() > $('#cosmetic-avenue').offset().top) {
+            if ($(window).scrollTop() < $('#cosmetic-avenue').offset().top + $('#cosmetic-avenue').height()) {
+              caParallax(last_known_scroll_position);
+            };
+          };
+
+          ticking = false;
+        });
+      }
+      ticking = true;
+    });
+    //end js parallax
     var viewHeight = $(window).height();
 
     var finsecImagesOffset = $('#finsec .images img').offset().top;
@@ -83,22 +121,6 @@ $(document).ready(function() {
     $(window).scroll(function() {
       var $scrollPosition = $(window).scrollTop() + viewHeight;
       var scrollActivationPoint = $(window).scrollTop() + (viewHeight * 3 / 5);
-
-      // Parallax effect for cosmetic-avenue sections
-      if ($scrollPosition > $('#cosmetic-avenue').offset().top) {
-        if ($(window).scrollTop() < $('#cosmetic-avenue').offset().top + $('#cosmetic-avenue').height()) {
-          var cosmeticAvenueParallax = -($('#cosmetic-avenue').height() / 5) * ($scrollPosition - $('#cosmetic-avenue').offset().top) / ($('#cosmetic-avenue').height() + viewHeight);
-          $('#cosmetic-avenue .parallaxBackground').css('transform', 'translateY(' + cosmeticAvenueParallax + 'px)');
-        };
-      };
-
-      // Parallax effect for jeep sections
-      if ($scrollPosition > $('#jeep').offset().top) {
-        if ($(window).scrollTop() < $('#jeep').offset().top + $('#jeep').height()) {
-          var jeepParallax = -($('#jeep').height() / 5) * ($scrollPosition - $('#jeep').offset().top) / ($('#jeep').height() + viewHeight);
-          $('#jeep .parallaxBackground').css('transform', 'translateY(' + jeepParallax + 'px)');
-        };
-      };
 
       //Animate in elements which activate on page scroll
       if (!lookingGoodCompleted) {
@@ -142,6 +164,7 @@ $(document).ready(function() {
           }, 1000);
         };
       };
+
     });
   };
 

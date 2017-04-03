@@ -1,4 +1,9 @@
 #about {
+  user-select: none;
+  cursor: default;
+  a {
+    cursor: pointer;
+  }
   #hero {
     background-image: url('/assets/img/about/hero-2000px.jpg');
     background-size: cover;
