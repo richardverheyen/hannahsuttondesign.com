@@ -5,6 +5,7 @@ header {
   width: 100vw;
   height: 80px;
   z-index: 5;
+  transition: top ease-in-out 800ms;
   > div {
     position: relative;
     display: flex;

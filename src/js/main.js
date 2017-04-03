@@ -38,20 +38,15 @@ $(document).ready(function() {
     return showingMenu;
   });
 
-  // // short term, open side menu on 'contact' click
-  // $('.contact-button').on('click', toggleMenu());
-
   //Animate the Logo titles outwards from the Logo Egg
   function logoToggle() {
     if (showingLogo) {
       $('#logo').removeClass('active');
       showingLogo = false;
-
     } else {
       logoAnimation();
       $('#logo').addClass('active');
       showingLogo = true;
-
     }
     return showingLogo;
   };
@@ -63,6 +58,26 @@ $(document).ready(function() {
       $('#logo a').removeClass('animate');
     }, 1500);
   };
+
+  //Header recedes up on scroll down
+  var lastScrollTop = 0;
+  var counter = 0;
+  $(window).scroll(function() {
+    var newScrollTop = $(document).scrollTop();
+    var goingDown = newScrollTop > lastScrollTop ? true : false;
+    if (!showingMenu) {
+      if (goingDown) {
+        counter += 1;
+        if (counter > 10) {
+          $('header').css('top', '-80px');
+        };
+      } else {
+        $('header').css('top', '0');
+        counter = 0;
+      };
+    };
+    lastScrollTop = newScrollTop;
+  });
 
   if ($('body').is('#landing')) {
 
