@@ -285,12 +285,18 @@
             top: 47%;
             left: 15%;
             width: 50px;
+            @media (min-width: 760px) {
+              width: 10vw;
+            }
           }
           img:nth-child(2) {
             //drink
             top: 23%;
             left: 85%;
             width: 50px;
+            @media (min-width: 760px) {
+              width: 8vw;
+            }
           }
 
         }
@@ -302,12 +308,18 @@
             top: 6%;
             left: 10%;
             width: 80px;
+            @media (min-width: 760px) {
+              width: 12vw;
+            }
           }
           img:nth-child(2) {
             //girl
             top: 58%;
             left: 75%;
             width: 50px;
+            @media (min-width: 760px) {
+              width: 10vw;
+            }
           }
 
         }
@@ -319,6 +331,9 @@
             top: 63%;
             left: 27%;
             width: 120px;
+            @media (min-width: 760px) {
+              width: 12vw;
+            }
           }
           img:nth-child(2) {
             //donut
