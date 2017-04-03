@@ -43,6 +43,8 @@
           line-height: 100%;
           color: white;
           z-index: 3;
+          user-select: none;
+          cursor: default;
           span {
             display: block;
             text-align: right;
@@ -92,6 +94,8 @@
           line-height: 160%;
           max-width: 570px;
           margin-top: 52px;
+          user-select: none;
+          cursor: default;
           @media (max-width: 600px) {
             font-size: 3vw;
           }
@@ -110,6 +114,8 @@
           font-size: 28px;
           color: $gold-leaf;
           top: -60px;
+          user-select: none;
+          cursor: default;
           @media (max-width: 600px) {
             font-size: 4vw;
             top: -6vw;
@@ -138,6 +144,8 @@
     }
     h2 {
       margin: 10px 0 80px;
+      user-select: none;
+      cursor: default;
       @media (max-width: 550px) {
         font-size: 9vw;
       }
@@ -182,6 +190,8 @@
         color: white;
         line-height: 120%;
         letter-spacing: 2px;
+        user-select: none;
+        cursor: default;
         @media (max-width: 550px) {
           font-size: 7vw;
         }
@@ -193,6 +203,8 @@
       p {
         text-transform: uppercase;
         color: $gold-leaf;
+        user-select: none;
+        cursor: default;
 
       }
 
@@ -228,6 +240,8 @@
         color: white;
         margin-top: 5%;
         z-index: 2;
+        user-select: none;
+        cursor: default;
         @media (max-width: 600px) {
           margin-top: 30%;
         }
