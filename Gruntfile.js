@@ -220,7 +220,7 @@ module.exports = function(grunt) {
     xml_sitemap: {
       custom_options: {
         options: {
-          siteRoot: 'http://www.finsecptx.com.au/',
+          siteRoot: 'https://www.hannahsuttondesign.com/',
           changefreq: 'monthly',
           priority: '0.5',
           dest: 'dist/'
