@@ -242,10 +242,29 @@
 
   #tell-me-more {
     position: relative;
-    background: url("/assets/img/landing/chair-forest-2000x1600.jpg");
     background-size: cover;
     background-position-x: 50%;
     z-index: 0;
+    background-image: url("/assets/img/landing/chair-forest-2000x1600.jpg");
+    @media (max-height: 1440px) {
+      background-image: url("/assets/img/landing/chair-forest-1800x1440.jpg");
+    }
+    @media (max-height: 1280px) {
+      background-image: url("/assets/img/landing/hero-1600x1280.jpg");
+    }
+    @media (max-width: 1120px) {
+      background-image: url("/assets/img/landing/hero-1400x1120.jpg");
+    }
+    @media (max-width: 960px) {
+      background-image: url("/assets/img/landing/hero-1200x960.jpg");
+    }
+    @media (max-width: 800px) {
+      background-image: url("/assets/img/landing/hero-1000x800.jpg");
+    }
+    // @include if-retina {
+    //   background-image: url("/assets/img/landing/hero-2000x1200.jpg");
+    // }
+
     >:after {
       content: ("");
       position: absolute;
