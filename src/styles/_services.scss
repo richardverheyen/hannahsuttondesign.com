@@ -7,7 +7,7 @@
   #services-section {
     background: $platinum;
     padding-top: 80px;
-    > div {
+    >div {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -30,15 +30,14 @@
     background: $platinum;
     padding-bottom: 10vw;
 
-    > div {
+    >div {
       display: flex;
       flex-direction: column;
       align-items: center;
-
       position: relative;
       overflow: visible;
       &:before {
-        content: ('');
+        content: ("");
         width: 20vw;
         max-width: 200px;
         height: 200px;
@@ -46,7 +45,7 @@
         top: -40px;
         left: 15%;
         transform: translatex(-50%);
-        background-image: url('/assets/img/services/ready-doctor@2x.png');
+        background-image: url("/assets/img/services/ready-doctor@2x.png");
         background-size: contain;
         background-repeat: no-repeat;
         @media (max-width: 500px) {
@@ -54,7 +53,7 @@
         }
       }
       &:after {
-        content: ('');
+        content: ("");
         width: 20vw;
         max-width: 260px;
         height: 200px;
@@ -62,7 +61,7 @@
         bottom: 0;
         right: 15%;
         transform: translatex(50%);
-        background-image: url('/assets/img/services/colette-werden@2x.png');
+        background-image: url("/assets/img/services/colette-werden@2x.png");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
@@ -70,13 +69,13 @@
           bottom: -60px;
         }
       }
-      > h2 {
+      >h2 {
         margin-bottom: 40px;
       }
-      > img {
+      >img {
         width: 210px;
       }
-      > div {
+      >div {
         position: relative;
         width: 210px;
         ul {
@@ -96,11 +95,11 @@
             text-transform: uppercase;
             margin-bottom: 10px;
           }
-          > img {
+          >img {
             width: 25px;
             margin-bottom: 15px;
           }
-          li {}
+
           &:nth-child(1) {
             position: absolute;
             left: 1%;
@@ -121,15 +120,14 @@
     background: $platinum;
     padding-bottom: 10vw;
 
-    > div {
+    >div {
       display: flex;
       flex-direction: column;
       align-items: center;
-
       position: relative;
       overflow: visible;
       &:before {
-        content: ('');
+        content: ("");
         width: 20vw;
         max-width: 220px;
         height: 200px;
@@ -137,7 +135,7 @@
         top: -40px;
         left: 15%;
         transform: translatex(-50%);
-        background-image: url('/assets/img/services/red-dust@2x.png');
+        background-image: url("/assets/img/services/red-dust@2x.png");
         background-size: contain;
         background-repeat: no-repeat;
         @media (max-width: 500px) {
@@ -145,7 +143,7 @@
         }
       }
       &:after {
-        content: ('');
+        content: ("");
         width: 20vw;
         max-width: 220px;
         height: 200px;
@@ -153,7 +151,7 @@
         bottom: 0;
         right: 15%;
         transform: translatex(50%);
-        background-image: url('/assets/img/services/maya@2x.png');
+        background-image: url("/assets/img/services/maya@2x.png");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
@@ -164,11 +162,11 @@
       h2 {
         margin-bottom: 40px;
       }
-      > img {
+      >img {
         max-width: 180px;
         margin-bottom: 10px;
       }
-      > div {
+      >div {
         position: relative;
         width: 180px;
         height: 300px;
@@ -187,7 +185,7 @@
             text-transform: uppercase;
             margin-bottom: 10px;
           }
-          > img {
+          >img {
             width: 25px;
             margin-bottom: 15px;
           }
@@ -227,11 +225,11 @@
         margin-bottom: 40px;
         z-index: 3;
       }
-      > img {
+      >img {
         max-width: 200px;
         margin-bottom: 10px;
       }
-      > div {
+      >div {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -252,7 +250,7 @@
             text-transform: uppercase;
             margin-bottom: 10px;
           }
-          > img {
+          >img {
             height: 70px;
             margin-bottom: 15px;
           }
@@ -261,7 +259,6 @@
     }
     .parallax {
       position: absolute;
-
       top: 0;
       left: 0;
       height: 120vh;
@@ -298,7 +295,6 @@
               width: 8vw;
             }
           }
-
         }
       }
       &.layer-2 {
@@ -321,7 +317,6 @@
               width: 10vw;
             }
           }
-
         }
       }
       &.layer-3 {
@@ -341,7 +336,6 @@
             left: 85%;
             width: 20px;
           }
-
         }
       }
       &.layer-4 {
@@ -449,7 +443,7 @@
     }
   }
   #contact {
-    background-image: url('/assets/img/services/hero-2000px.jpg');
+    background-image: url("/assets/img/landing/hero-2000x1200.jpg");
     background-size: cover;
     height: 66vw;
     min-height: 500px;

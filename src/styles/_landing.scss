@@ -1,7 +1,6 @@
 #landing {
   #hero {
     position: relative;
-    background-image: url('/assets/img/landing/hero-2000px.jpg');
     background-size: cover;
     background-position-x: 80%;
     height: 800px;
@@ -9,22 +8,38 @@
     @media (max-width: 600px) {
       height: 700px;
       &:after {
-        content: ('');
+        content: ("");
         position: absolute;
         width: 100%;
         height: 100%;
-        background-image: url('/assets/img/landing/background-chair-overlay.png');
+        background-image: url("/assets/img/landing/background-chair-overlay.png");
         background-size: cover;
         top: 20%;
         transform: rotateX(180deg);
         z-index: 2;
       }
     }
+    // Reasoning for responsive widths:
+    // The background image is set to cover the entire section.
+    // On mobile the the height will be 530px always and the left and right will be chopped up.
+    // For that reason we do not want to use a 400px wide image for mobile.
+    background-image: url("/assets/img/landing/hero-2000x1200.jpg");
+    @media (max-width: 1800px) {
+      background-image: url("/assets/img/landing/hero-1800x1080.jpg");
+    }
+    @media (max-width: 1600px) {
+      background-image: url("/assets/img/landing/hero-1600x960.jpg");
+    }
+    @media (max-width: 1400px) {
+      background-image: url("/assets/img/landing/hero-1400x840.jpg"); // We need an image at least 800 high
+    }
     @media (max-width: 400px) {
       height: 640px;
+      background-image: url("/assets/img/landing/hero-1200x720.jpg"); // We need an image at least 640 high
     }
     @media (max-width: 322px) {
       height: 530px;
+      background-image: url("/assets/img/landing/hero-1000x600.jpg"); // We need an image at least 530 high
     }
     div {
       display: flex;
@@ -59,11 +74,11 @@
             text-align: right;
           }
           :after {
-            content: ('');
+            content: ("");
             position: absolute;
             height: 70px;
             width: 60px;
-            background: url('/assets/img/icons/small-arrow-down-animated.svg');
+            background: url("/assets/img/icons/small-arrow-down-animated.svg");
             background-repeat: no-repeat;
             bottom: -80px;
             transform: translateX(-50%);
@@ -113,7 +128,7 @@
           }
         }
       }
-      > #arrow-bracket {
+      >#arrow-bracket {
         position: relative;
         margin-bottom: 0;
         width: 60vw;
@@ -164,7 +179,7 @@
       span {
         position: relative;
         &:after {
-          content: ('');
+          content: ("");
           position: absolute;
           bottom: 5px;
           left: 2%;
@@ -214,31 +229,29 @@
         color: $gold-leaf;
         user-select: none;
         cursor: default;
-
       }
-
     }
   }
 
   #tell-me-more {
     position: relative;
-    background: url('/assets/img/landing/background-chair.jpg');
+    background: url("/assets/img/landing/background-chair.jpg");
     background-size: cover;
     background-position-x: 50%;
     z-index: 0;
-    > :after {
-      content: ('');
+    >:after {
+      content: ("");
       position: absolute;
       width: 100%;
       height: 100%;
-      background: url('/assets/img/landing/background-chair-overlay.png');
+      background: url("/assets/img/landing/background-chair-overlay.png");
       background-size: cover;
       z-index: 1;
       transform: translate(-50%, -50%);
       top: 49%;
       left: 50%;
     }
-    > div {
+    >div {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -261,7 +274,7 @@
           font-size: 32px;
         }
       }
-      > #arrow-bracket-reverse {
+      >#arrow-bracket-reverse {
         position: relative;
         margin-bottom: 0;
         width: 60vw;
@@ -284,7 +297,7 @@
           //short term fix for double click on ios touchscreen
           @media (min-width: 500px) {
             &:after {
-              content: ('');
+              content: ("");
               position: absolute;
               bottom: -1px;
               left: 0;

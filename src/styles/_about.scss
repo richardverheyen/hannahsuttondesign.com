@@ -5,7 +5,7 @@
     cursor: pointer;
   }
   #hero {
-    background-image: url('/assets/img/about/hero-2000px.jpg');
+    background-image: url("/assets/img/landing/hero-2000x1200.jpg");
     background-size: cover;
     background-position-x: 70%;
     height: 800px;
@@ -42,11 +42,11 @@
             text-align: right;
           }
           :after {
-            content: ('');
+            content: ("");
             position: absolute;
             height: 70px;
             width: 60px;
-            background: url('/assets/img/landing/big-arrow.svg');
+            background: url("/assets/img/landing/big-arrow.svg");
             background-repeat: no-repeat;
             bottom: -80px;
             transform: translateX(-50%);
@@ -101,7 +101,6 @@
               font-size: 18px;
               line-height: 130%;
             }
-
           }
           img {
             height: 70px;
@@ -215,14 +214,14 @@
   }
   #services-link {
     height: 800px;
-    background: url('/assets/img/about/chair-2000px.jpg');
+    background: url("/assets/img/about/chair-2000px.jpg");
     background-size: cover;
     background-position: 56%;
     transform: translateY(-1px);
-    > div {
+    >div {
       position: relative;
       height: 100%;
-      > a {
+      >a {
         position: absolute;
         top: 20%;
         left: 75%;
