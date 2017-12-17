@@ -411,7 +411,8 @@
             @media (max-width: 400px) {
               margin-bottom: 0;
             }
-            img {
+            >img,
+            >picture {
               margin: auto 0;
               @media (max-width: 720px) {
                 min-width: 300px;
