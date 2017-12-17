@@ -139,7 +139,7 @@ $(document).ready(function() {
     var cardMobileCompleted = false;
     var cardDesktopOffset = $('#cardDesktop').offset().top;
     var cardDesktopCompleted = false;
-    var jeepImageOffset = $('#jeepImage').offset().top;
+    var jeepImageOffset = $('#jeep-image').offset().top;
     var jeepImageCompleted = false;
     var caImageOffset = $('#caImage').offset().top;
     var caImageCompleted = false;
@@ -169,7 +169,7 @@ $(document).ready(function() {
       }
       if (!jeepImageCompleted) {
         if (scrollActivationPoint > jeepImageOffset) {
-          $('#jeepImage').addClass('active');
+          $('#jeep-image').addClass('active');
           var jeepImageCompleted = true;
         };
       };
