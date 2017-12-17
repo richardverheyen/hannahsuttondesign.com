@@ -41,6 +41,13 @@
       height: 530px;
       background-image: url("/assets/img/landing/hero-1000x600.jpg"); // We need an image at least 530 high
     }
+    // On retina screens we need double pixel density
+    // Given that non of the above media queries uses below 1000px wide image, all must default to our maximum 2000px wide image.
+    // We don't want this everywhere, but the landing hero needs to make an impact!
+    // Given the detail of those picture, the quality difference is also quite noticeable.
+    @include if-retina {
+      background-image: url("/assets/img/landing/hero-2000x1200.jpg");
+    }
     div {
       display: flex;
       flex-direction: column;
