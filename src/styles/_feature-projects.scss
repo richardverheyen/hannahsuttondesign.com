@@ -85,9 +85,27 @@
             //background images with parallax effect
             position: absolute;
             top: 0;
-            background: url("/assets/img/landing/jeep/background-texture.jpg");
             background-repeat: no-repeat;
             background-size: cover;
+            background-image: url("/assets/img/landing/jeep/jeep-bg-1600w.jpg");
+            @media (max-width: 1400px) {
+              background-image: url("/assets/img/landing/jeep/jeep-bg-1400w.jpg");
+            }
+            @media (max-width: 1200px) {
+              background-image: url("/assets/img/landing/jeep/jeep-bg-1200w.jpg");
+            }
+            @media (max-width: 1000px) {
+              background-image: url("/assets/img/landing/jeep/jeep-bg-1000w.jpg");
+            }
+            @media (max-width: 800px) {
+              background-image: url("/assets/img/landing/jeep/jeep-bg-800w.jpg");
+            }
+            @media (max-width: 600px) {
+              background-image: url("/assets/img/landing/jeep/jeep-bg-600w.jpg");
+            }
+            @media (max-width: 400px) {
+              background-image: url("/assets/img/landing/jeep/jeep-bg-400w.jpg");
+            }
           }
           .aside {
             left: 80%;
