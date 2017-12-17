@@ -16,16 +16,15 @@
 			<a href="/feature-project/jeep/">See full project</a>
 		</div>
 		<div class="images">
-			{{!-- <img id="jeep-image" src="/assets/img/landing/jeep/jeep@2x.png" alt=""> --}}
       {{!-- The <picture> element does not exist on IE. Instead it will fallback to the <img> --}}
-      {{!--  --}}
+			{{!-- This image is 62vw wide. So in order to use the smallest possible image, we show a 1000px wide image only at 1000px/0.62vw = 1612px. --}}
 			<picture id="jeep-image">
-        <source srcset="/assets/img/landing/jeep/jeep-400w.png" media="(max-width: 600px)">
-				<source srcset="/assets/img/landing/jeep/jeep-600w.png" media="(max-width: 600px)">
-				<source srcset="/assets/img/landing/jeep/jeep-800w.png" media="(max-width: 600px)">
-				<source srcset="/assets/img/landing/jeep/jeep-1000w.png" media="(max-width: 600px)">
-				<source srcset="/assets/img/landing/jeep/jeep-1200w.png" media="(max-width: 600px)">
-				<source srcset="/assets/img/landing/jeep/jeep-1400w.png" media="(max-width: 600px)">
+        <source srcset="/assets/img/landing/jeep/jeep-400w.png" media="(max-width: 645px)">
+				<source srcset="/assets/img/landing/jeep/jeep-600w.png" media="(max-width: 967px)">
+				<source srcset="/assets/img/landing/jeep/jeep-800w.png" media="(max-width: 1290px)">
+				<source srcset="/assets/img/landing/jeep/jeep-1000w.png" media="(max-width: 1612px)">
+				<source srcset="/assets/img/landing/jeep/jeep-1200w.png" media="(max-width: 1935px)">
+				<source srcset="/assets/img/landing/jeep/jeep-1400w.png" media="(max-width: 2258px)">
 				<img src="/assets/img/landing/jeep/jeep-1600w.png" alt="Custom hand drawn vehicle signage wrapper on a Jeep by Hannah Sutton">
 			</picture>
 		</div>
