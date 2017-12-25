@@ -7,16 +7,9 @@
     overflow: hidden;
     @media (max-width: 600px) {
       height: 700px;
-      &:after {
-        content: ("");
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-image: url("/assets/img/landing/background-chair-overlay.png");
-        background-size: cover;
-        top: 20%;
-        transform: rotateX(180deg);
-        z-index: 2;
+      >div {
+        background: linear-gradient(to top, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 80%);
+        max-width: none;
       }
     }
     // Reasoning for responsive widths:
@@ -245,6 +238,7 @@
     background-size: cover;
     background-position-x: 50%;
     z-index: 0;
+    // Reasoning for responsive widths:
     // This image will always be `height: 80vw`.
     // That means on a 1000px wide screen we want to show an image at least 800 high.
     // On a retina screen 1000px wide we want an image at least 1600 high.
@@ -291,17 +285,9 @@
         background-image: url("/assets/img/landing/chair-forest-800x640.jpg");
       }
     }
-    >:after {
-      content: ("");
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: url("/assets/img/landing/background-chair-overlay.png");
-      background-size: cover;
-      z-index: 1;
-      transform: translate(-50%, -50%);
-      top: 49%;
-      left: 50%;
+    >div {
+      background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 50%);
+      max-width: none;
     }
     >div {
       display: flex;
