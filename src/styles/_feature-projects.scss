@@ -56,10 +56,43 @@
             //background images with parallax effect
             position: absolute;
             top: 0;
-            background: url("/assets/img/landing/cosmetic-avenue/background-texture.png");
             background-color: #142C45;
             background-repeat: no-repeat;
             background-size: cover;
+
+            // Reasoning for responsive:
+            // Based on manual observations the element containing the image will be this size.
+            // 2000 > 2000x1440
+            // 1800 > 1800x1440
+            // 1600 > 1600x1440
+            // 1400 > 1440x1440
+            // 1200 > 1200x1440
+            // 1000 > 1000x1440
+            // 800 > 800x1152
+            // 600 > 600x900
+            // 400 > 400x900
+
+            // Available images:
+            // background-image: url("/assets/img/landing/cosmetic-bg-2000x1600.jpg");
+            // background-image: url("/assets/img/landing/cosmetic-bg-1800x1440.jpg");
+            // background-image: url("/assets/img/landing/cosmetic-bg-1600x1280.jpg");
+            // background-image: url("/assets/img/landing/cosmetic-bg-1400x1120.jpg");
+            // background-image: url("/assets/img/landing/cosmetic-bg-1200x960.jpg");
+            // background-image: url("/assets/img/landing/cosmetic-bg-1000x800.jpg");
+            // background-image: url("/assets/img/landing/cosmetic-bg-800x640.jpg");
+            // background-image: url("/assets/img/landing/cosmetic-bg-600x480.jpg");
+            // background-image: url("/assets/img/landing/cosmetic-bg-400x320.jpg");
+
+            background-image: url("/assets/img/landing/cosmetic-bg-2000x1600.jpg");
+            @media (max-width: 1800px) {
+              background-image: url("/assets/img/landing/cosmetic-bg-1800x1440.jpg");
+            }
+            @media (max-width: 800px) {
+              background-image: url("/assets/img/landing/cosmetic-bg-1600x1280.jpg");
+            }
+            @media (max-width: 600px) {
+              background-image: url("/assets/img/landing/cosmetic-bg-1200x960.jpg");
+            }
           }
           .images {
             img {
