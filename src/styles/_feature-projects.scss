@@ -53,7 +53,6 @@
         >div {
           z-index: 0;
           >.parallaxBackground {
-            //background images with parallax effect
             position: absolute;
             top: 0;
             background-color: #142C45;
@@ -171,7 +170,7 @@
         }
       }
       #finsec {
-        background: url("/assets/img/landing/finsec/background.jpg");
+        background-color: #1A183A;
         >div {
           .background {
             height: 100%;
