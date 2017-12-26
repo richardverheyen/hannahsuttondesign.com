@@ -177,7 +177,6 @@
           }
           .images {
             left: 66%;
-
             div {
               position: relative;
               width: 35vw;
@@ -187,25 +186,24 @@
               @media (max-width: 380px) {
                 height: 60vw;
               }
-
-              >img {
+              picture {
                 position: absolute;
                 transition: all ease 1200ms;
                 transform: translateX(30px);
                 opacity: 0;
-                &:nth-child(1) {
+                &#imac {
                   right: 0;
                   bottom: 0;
                   width: 100%;
                   min-width: 225px;
                 }
-                &:nth-last-child(2) {
+                &#ipad {
                   right: -10px;
                   bottom: -9px;
                   width: 46%;
                   min-width: 100px;
                 }
-                &:nth-last-child(1) {
+                &#iphone {
                   right: -30px;
                   bottom: -13px;
                   width: 20%;
@@ -215,6 +213,9 @@
                 &.active {
                   transform: translateX(0);
                   opacity: 1;
+                }
+                img {
+                  max-width: 100%;
                 }
               }
             }
@@ -483,6 +484,7 @@
           position: absolute;
           z-index: 1;
           width: 100vw;
+          min-width: 320px;
           height: 120%;
           transition: all linear 50ms;
           &:nth-last-child(1) {
