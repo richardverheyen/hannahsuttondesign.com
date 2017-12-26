@@ -238,51 +238,46 @@
     background-size: cover;
     background-position-x: 50%;
     z-index: 0;
-    // Reasoning for responsive widths:
-    // This image will always be `height: 80vw`.
-    // That means on a 1000px wide screen we want to show an image at least 800 high.
-    // On a retina screen 1000px wide we want an image at least 1600 high.
+
+    // Reasoning for responsive:
+    // The element containing the background image will be the following sizes per screen width.
+    // 400x600
+    // 500x800
+    // 600x800
+    // 800x800
+    // 1000x800
+    // 1100x880
+    // 1200x960
+    // 1400x1120
+    // 1600x1280
+    // 1800x1440
+    // 2000x1600
+    // That means that our background image should be wider and higher than these dimensions.
+    // That means on retina screens that the image should be twice as wide and high as these dimensions.
+
     background-image: url("/assets/img/landing/chair-forest-2000x1600.jpg");
-    @media (max-width: 1440px) {
+    @media (max-width: 1800px) {
       background-image: url("/assets/img/landing/chair-forest-1800x1440.jpg");
     }
-    @media (max-width: 1280px) {
+    @media (max-width: 1600px) {
       background-image: url("/assets/img/landing/chair-forest-1600x1280.jpg");
     }
-    @media (max-width: 1120px) {
+    @media (max-width: 1400px) {
       background-image: url("/assets/img/landing/chair-forest-1400x1120.jpg");
     }
-    @media (max-width: 960px) {
+    @media (max-width: 1200px) {
       background-image: url("/assets/img/landing/chair-forest-1200x960.jpg");
     }
-    @media (max-width: 800px) {
+    @media (max-width: 1000px) {
       background-image: url("/assets/img/landing/chair-forest-1000x800.jpg");
     }
-    @media (max-width: 640px) {
+    @media (max-width: 400px) {
       background-image: url("/assets/img/landing/chair-forest-800x640.jpg");
-    }
-    @media (max-width: 480px) {
-      background-image: url("/assets/img/landing/chair-forest-600x480.jpg");
-    }
-    @media (max-width: 320px) {
-      background-image: url("/assets/img/landing/chair-forest-400x320.jpg");
     }
     @include if-retina {
       background-image: url("/assets/img/landing/chair-forest-2000x1600.jpg");
-      @media (max-width: 640px) {
-        background-image: url("/assets/img/landing/chair-forest-1600x1280.jpg");
-      }
-      @media (max-width: 560px) {
-        background-image: url("/assets/img/landing/chair-forest-1400x1120.jpg");
-      }
-      @media (max-width: 480px) {
-        background-image: url("/assets/img/landing/chair-forest-1200x960.jpg");
-      }
       @media (max-width: 400px) {
-        background-image: url("/assets/img/landing/chair-forest-1000x800.jpg");
-      }
-      @media (max-width: 320px) {
-        background-image: url("/assets/img/landing/chair-forest-800x640.jpg");
+        background-image: url("/assets/img/landing/chair-forest-1600x1280.jpg");
       }
     }
     >div {
@@ -294,8 +289,11 @@
       flex-direction: column;
       align-items: center;
       height: 80vw;
-      min-height: 100vh;
       z-index: 2;
+      min-height: 800px;
+      @media (max-width: 400px) {
+        min-height: 600px;
+      }
       h2 {
         color: white;
         margin-top: 5%;
