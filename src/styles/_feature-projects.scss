@@ -61,27 +61,20 @@
             background-size: cover;
 
             // Reasoning for responsive:
-            // Based on manual observations the element containing the image will be this size.
-            // 2000 > 2000x1440
-            // 1800 > 1800x1440
-            // 1600 > 1600x1440
-            // 1400 > 1440x1440
-            // 1200 > 1200x1440
-            // 1000 > 1000x1440
-            // 800 > 800x1152
-            // 600 > 600x900
-            // 400 > 400x900
-
-            // Available images:
-            // background-image: url("/assets/img/landing/cosmetic-bg-2000x1600.jpg");
-            // background-image: url("/assets/img/landing/cosmetic-bg-1800x1440.jpg");
-            // background-image: url("/assets/img/landing/cosmetic-bg-1600x1280.jpg");
-            // background-image: url("/assets/img/landing/cosmetic-bg-1400x1120.jpg");
-            // background-image: url("/assets/img/landing/cosmetic-bg-1200x960.jpg");
-            // background-image: url("/assets/img/landing/cosmetic-bg-1000x800.jpg");
-            // background-image: url("/assets/img/landing/cosmetic-bg-800x640.jpg");
-            // background-image: url("/assets/img/landing/cosmetic-bg-600x480.jpg");
-            // background-image: url("/assets/img/landing/cosmetic-bg-400x320.jpg");
+            // The element containing the background image will be the following sizes per screen width.
+            // 2000x1440
+            // 1800x1440
+            // 1600x1440
+            // 1440x1440
+            // 1200x1440
+            // 1000x1440
+            // 800x1152
+            // 700x1008
+            // 600x900
+            // 500x900
+            // 400x900
+            // That means that our background image should be wider and higher than these dimensions.
+            // That means on retina screens that the image should be twice as wide and high as these dimensions.
 
             background-image: url("/assets/img/landing/cosmetic-bg-2000x1600.jpg");
             @media (max-width: 1800px) {
@@ -89,6 +82,9 @@
             }
             @media (max-width: 800px) {
               background-image: url("/assets/img/landing/cosmetic-bg-1600x1280.jpg");
+            }
+            @media (max-width: 700px) {
+              background-image: url("/assets/img/landing/cosmetic-bg-1400x1120.jpg");
             }
             @media (max-width: 600px) {
               background-image: url("/assets/img/landing/cosmetic-bg-1200x960.jpg");
@@ -115,29 +111,33 @@
       #jeep {
         div {
           >.parallaxBackground {
-            //background images with parallax effect
             position: absolute;
             top: 0;
             background-repeat: no-repeat;
             background-size: cover;
-            background-image: url("/assets/img/landing/jeep/jeep-bg-1600w.jpg");
-            @media (max-width: 1400px) {
-              background-image: url("/assets/img/landing/jeep/jeep-bg-1400w.jpg");
-            }
-            @media (max-width: 1200px) {
-              background-image: url("/assets/img/landing/jeep/jeep-bg-1200w.jpg");
-            }
-            @media (max-width: 1000px) {
-              background-image: url("/assets/img/landing/jeep/jeep-bg-1000w.jpg");
-            }
-            @media (max-width: 800px) {
-              background-image: url("/assets/img/landing/jeep/jeep-bg-800w.jpg");
+
+            // Reasoning for responsive:
+            // The element containing the background image will be the following sizes per screen width.
+            // 2000x1440
+            // 1800x1440
+            // 1600x1440
+            // 1440x1440
+            // 1200x1440
+            // 1000x1440
+            // 800x1152
+            // 700x1008
+            // 600x900
+            // 500x900
+            // 400x900
+            // That means that our background image should be wider and higher than these dimensions.
+            // That means on retina screens that the image should be twice as wide and high as these dimensions.
+
+            background-image: url("/assets/img/landing/jeep-bg-1600x1280.jpg");
+            @media (max-width: 700px) {
+              background-image: url("/assets/img/landing/jeep-bg-1400x1120.jpg");
             }
             @media (max-width: 600px) {
-              background-image: url("/assets/img/landing/jeep/jeep-bg-600w.jpg");
-            }
-            @media (max-width: 400px) {
-              background-image: url("/assets/img/landing/jeep/jeep-bg-400w.jpg");
+              background-image: url("/assets/img/landing/jeep-bg-1200x960.jpg");
             }
           }
           .aside {
