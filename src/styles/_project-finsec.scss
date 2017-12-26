@@ -29,7 +29,7 @@
   }
   #details {
     background-color: $platinum;
-    > div {
+    >div {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -62,24 +62,23 @@
           font-size: 14px;
         }
       }
-      > img:nth-child(1) {
+      >img:nth-child(1) {
         margin-top: 60px;
         height: 100px;
       }
-      > img {
+      >img {
         margin-top: 10px;
         height: 60px;
       }
-      > img:nth-last-child(1) {
+      >img:nth-last-child(1) {
         margin-bottom: 100px;
         height: 40px;
       }
     }
   }
   #image-display {
-    background-image: url('/assets/img/portfolio/finsec/background.jpg');
-
-    > div {
+    background-color: #1A183A;
+    >div {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -94,7 +93,7 @@
     }
   }
   #banner {
-    background-color: #0f1c3c;
+    background-color: #0F1C3C;
     div {
       display: flex;
       flex-direction: column;
@@ -115,7 +114,7 @@
     }
   }
   #hero2 {
-    background-image: url('/assets/img/portfolio/finsec/background.jpg');
+    background-color: #1A183A;
     background-size: cover;
     div {
       display: flex;
@@ -129,6 +128,5 @@
         max-width: 2000px;
       }
     }
-
   }
 }
