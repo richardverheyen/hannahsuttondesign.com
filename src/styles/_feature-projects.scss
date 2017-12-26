@@ -223,7 +223,7 @@
         }
       }
       #karen-williams {
-        background: url("/assets/img/landing/karen-williams/background.jpg");
+        background-color: #0D3349;
         >div {
           >.background {
             top: 50%;
@@ -232,6 +232,7 @@
             height: 250%;
             transform: translate(-50%, -50%);
             transform-origin: 100% 50%;
+            background: linear-gradient(to right, rgba(1,28,47,0) 40%,rgba(13,45,68,.25) 54%,rgba(19,53,79,.49) 61%,rgba(19,53,79,.62) 65%,rgba(19,53,79,.86) 79%,rgba(19,54,79,.8) 100%);
             @media (max-width: 720px) {
               top: 100%;
               left: 50%;
